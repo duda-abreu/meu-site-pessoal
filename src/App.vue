@@ -1,29 +1,38 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <Photo />
+    <Name />
+    <Icons />
+    <Certificates />
+    <Experiences />
+    <Biography />
   </div>
 </template>
 
 <script>
+import Photo from './components/Photo.vue';
+import Name from './components/Name.vue';
+import Icons from './components/Icons.vue';
+import Certificates from './components/Certificates.vue';
+import Experiences from './components/Experiences.vue';
+import Biography from './components/Biography.vue';
+
 export default {
   name: 'App',
+  components: {
+    Photo,
+    Name,
+    Icons,
+    Certificates,
+    Experiences,
+    Biography,
+  },
 };
 </script>
 
 <style>
+/* Estilos globais ou específicos do layout */
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  margin: 0 15px;
+  /* Estilos CSS */
 }
 </style>
