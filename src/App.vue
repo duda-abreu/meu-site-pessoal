@@ -1,31 +1,37 @@
 <template>
-  <div id="app">
-    <Photo />
-    <Name />
-    <Icons />
-    <Certificates />
-    <Experiences />
-    <Biography />
-  </div>
+  <div class="app">
+    <MinhaHeader />
+    <MeuNome @click.native="handleLinkClick('linkedin')" />
+    </div>
 </template>
 
 <script>
-import Photo from './components/Photo.vue';
-import Name from './components/Name.vue';
-import Icons from './components/Icons.vue';
-import Certificates from './components/Certificates.vue';
-import Experiences from './components/Experiences.vue';
-import Biography from './components/Biography.vue';
+import MinhaHeader from './components/MinhaHeader.vue';
+import MeuNome from './components/MeuNome.vue';
+import MeusCertificados from './components/MeusCertificados.vue';
+import MinhaBio from './components/MinhaBio.vue';
+import MinhasExperiencias from './components/MinhasExperiencias.vue';
+import OsIcones from './components/OsIcones.vue';
 
 export default {
-  name: 'App',
   components: {
-    Photo,
-    Name,
-    Icons,
-    Certificates,
-    Experiences,
-    Biography,
+    MinhaHeader,
+    MeuNome,
+    MinhaHeader
+    MeuNome
+    MeusCertificados
+    MinhaBio
+    MinhasExperiencias
+    OsIcones
+  },
+  methods: {
+    handleLinkClick(link) {
+      const links = {
+        linkedin: 'https://www.linkedin.com/in/mariaeduardaabreu/',
+        // Add other links here
+      };
+      window.location.href = links[link];
+    },
   },
 };
 </script>
