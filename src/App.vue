@@ -1,29 +1,44 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <div class="app">
+    <MinhaHeader />
+    <MeuNome @click.native="handleLinkClick('linkedin')" />
+    </div>
 </template>
 
 <script>
+import MinhaHeader from './components/MinhaHeader.vue';
+import MeuNome from './components/MeuNome.vue';
+import MeusCertificados from './components/MeusCertificados.vue';
+import MinhaBio from './components/MinhaBio.vue';
+import MinhasExperiencias from './components/MinhasExperiencias.vue';
+import OsIcones from './components/OsIcones.vue';
+
 export default {
-  name: 'App',
+  components: {
+    MinhaHeader,
+    MeuNome,
+    MinhaHeader
+    MeuNome
+    MeusCertificados
+    MinhaBio
+    MinhasExperiencias
+    OsIcones
+  },
+  methods: {
+    handleLinkClick(link) {
+      const links = {
+        linkedin: 'https://www.linkedin.com/in/mariaeduardaabreu/',
+        // Add other links here
+      };
+      window.location.href = links[link];
+    },
+  },
 };
 </script>
 
 <style>
+/* Estilos globais ou específicos do layout */
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-  margin: 0 15px;
+  /* Estilos CSS */
 }
 </style>
