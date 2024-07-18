@@ -1,19 +1,27 @@
 <template>
-    <div class="photo">
-      <img src="@/assets/images/minha-foto.jpg" alt="Minha Foto">
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'Photo',
-  };
-  </script>
-  
-  <style scoped>
-  /* Estilos específicos para o componente de foto */
-  .photo {
-    /* Estilos CSS */
+  <div class="foto-de-perfil">
+    <img :src="fotoSrc" alt="Minha Foto" />
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      fotoSrc: require('@/assets/nova-foto.jpg') // Atualize para o nome da nova foto
+    };
   }
-  </style>
-  
+};
+</script>
+
+<style scoped>
+.foto-de-perfil {
+  text-align: center;
+}
+
+.foto-de-perfil img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+</style>

@@ -1,35 +1,28 @@
 <template>
-    <div class="minha-bio">
-      <h2>Minha Biografia</h2>
-      <p>{{ bio }}</p>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        bio: "Sua biografia detalhada aqui.", // Replace with your bio content
-      };
-    },
-    methods: {
-      // Add any additional methods here
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .minha-bio {
-    margin-top: 30px;
+  <div class="bio">
+    <p>{{ biografia }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    biografia: {
+      type: String,
+      required: true
+    }
   }
-  
-  .minha-bio h2 {
-    text-align: center;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-  
-  .minha-bio p {
-    font-size: 1.2em;
-    line-height: 
-  
+};
+</script>
+
+<style scoped>
+.bio {
+  margin: 10px auto; /* Ajusta o espaçamento vertical */
+  text-align: center;
+}
+
+/* Aplica margem apenas acima das biografias que não são a primeira */
+.bio + .bio {
+  margin-top: 5px; /* Define o espaçamento entre as biografias */
+}
+</style>
