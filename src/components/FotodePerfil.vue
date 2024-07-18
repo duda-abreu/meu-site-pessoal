@@ -8,13 +8,17 @@
 export default {
   data() {
     return {
-      fotoSrc: require('@/assets/minha-foto.jpg') 
+      fotoSrc: require('@/assets/nova-foto.jpg') // Atualize para o nome da nova foto
     };
   }
 };
 </script>
 
 <style scoped>
+.foto-de-perfil {
+  text-align: center;
+}
+
 .foto-de-perfil img {
   width: 150px;
   height: 150px;
