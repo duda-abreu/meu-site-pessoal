@@ -6,7 +6,7 @@
         Olá! Eu sou a Maria Eduarda Abreu, mas você pode me chamar de Duda. Sou estudante de Ciência da Computação pela Universidade do Estado do Rio de Janeiro.
       </p>
       <p>
-        Estou entusiasmada com o mundo da tecnologia e sempre buscando aprender mais. Se quiser saber mais sobre minhas certificações e conquistas, clique em <a @click="abrirModal('certificados')">Certificados</a>.
+        Estou entusiasmada com o mundo da tecnologia e sempre buscando aprender mais. Se quiser saber mais sobre minhas certificações e conquistas, fique à vontade para explorar mais em <a href="https://www.linkedin.com/in/mariaeduardaabreu/" target="_blank">meu LinkedIn</a>.
       </p>
     </div>
   </div>
@@ -14,28 +14,36 @@
 
 <script>
 export default {
+  data() {
+    return {
+      // Dados removidos relacionados ao modal
+    };
+  },
   methods: {
-    abrirModal(modalType) {
-      // Lógica para abrir o modal, se aplicável
-    }
+    // Métodos removidos relacionados ao modal
   }
-}
+};
 </script>
 
 <style scoped>
 .sobre-container {
   padding: 20px;
-  background-color: #f5f5f5;
+}
+
+.sobre-texto {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .sobre-texto h1 {
-  font-size: 2em;
-  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
 }
 
 .sobre-texto p {
   font-size: 1.2em;
-  margin-top: 10px;
+  line-height: 1.6;
 }
 
 a {

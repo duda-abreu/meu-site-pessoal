@@ -1,22 +1,24 @@
-<template>
-    <header>
-      <h1>Meu Site Pessoal</h1>
-    </header>
-  </template>
-  
-  <script>
-  export default {
-    name: 'Header',
-  };
-  </script>
-  
-  <style>
-  header {
-    background-color: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-  }
-  <img src="@/assets/images/minha-foto.jpg" alt="Sua foto de perfil" class="foto-perfil">
 
-  </style>
-  
+
+<script>
+export default {
+  name: 'MinhaHeader', // Atualizado para um nome de componente de várias palavras
+};
+</script>
+
+<style>
+header {
+  background-color: #5D2510;
+  padding: 20px;
+  text-align: center;
+}
+
+.foto-perfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+</style>
+
+

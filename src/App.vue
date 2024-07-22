@@ -1,66 +1,47 @@
 <template>
   <div id="app">
-    <FotodePerfil />
-    <MeuNome nome="Maria Eduarda Abreu" />
-    <MinhaBio biografia="Estudante de Ciência da Computação pela Universidade do Estado do Rio de Janeiro." class="minha-bio" />
-    <MinhaBio biografia="Pra me conhecer um pouco melhor:" class="minha-bio menor-espacamento" />
-    <MeusIcones 
-      linkedinUrl="https://www.linkedin.com/in/mariaeduardaabreu/" 
-      githubUrl="https://github.com/duda-abreu"
-      :whatsappUrl="'https://wa.me/5521970923247?text=Olá, gostaria de saber mais sobre seu trabalho'"
-      :gmailUrl="'mailto:mariaedrdabreu@gmail.com?subject=Olá&body=Gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho'"
-    />
-    <MeusCertificados :certificados="certificados" />
+    <TheNavegacao />
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import FotodePerfil from './components/FotodePerfil.vue';
-import MeuNome from './components/MeuNome.vue';
-import MinhaBio from './components/MinhaBio.vue';
-import MeusIcones from './components/MeusIcones.vue';
-import MeusCertificados from './components/MeusCertificados.vue';
+import TheNavegacao from './components/TheNavegacao.vue';
 
 export default {
   components: {
-    FotodePerfil,
-    MeuNome,
-    MinhaBio,
-    MeusIcones,
-    MeusCertificados
-  },
-  data() {
-    return {
-      certificados: [
-        { id: 1, nome: 'Git e Github' },
-        { id: 2, nome: 'Excel Avançado' },
-        { id: 3, nome: 'Cambridge Certificate in Advanced English (CAE)' },
-      ]
-    };
+    TheNavegacao
   }
 };
 </script>
 
-<style scoped>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Remove a rolagem horizontal */
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 0;
-  padding: 0;
+  color: #942f18;
+  background-color: #F9DBD4;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
-  background-color: #f7dada; /* Rosa bebê */
 }
 
-.minha-bio {
-  margin-bottom: 10px; /* Espaço entre as biografias */
-}
-
-.menor-espacamento {
-  margin-bottom: 5px; /* Menor espaço para a segunda biografia */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
 }
 </style>
