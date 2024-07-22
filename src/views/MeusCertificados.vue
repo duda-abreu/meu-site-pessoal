@@ -36,6 +36,11 @@ export default {
           id: 3,
           nome: 'Cambridge Certificate in Advanced English (CAE)',
           imagem: 'CambridgeResult.jpg'
+        },
+        {
+          id: 4,
+          nome: 'HTML e CSS',
+          imagem: 'CertHtmlCSS.jpg'
         }
       ],
       certificadoSelecionado: null,

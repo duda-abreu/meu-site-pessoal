@@ -3,7 +3,7 @@
       <div class="sobre-texto">
         <h1>Sobre Mim</h1>
         <p>
-          Olá! Eu sou a Maria Eduarda Abreu, mas pode me chamar de Duda. Sou estudante de Ciência da Computação pela Universidade do Estado do Rio de Janeiro.
+          Oie! Eu sou Duda!ou estudante de Ciência da Computação pela Universidade do Estado do Rio de Janeiro.
         </p>
         <p>
           Estou apaixonada por tecnologia e aprendizado contínuo. Clique em <a @click="abrirModal('certificados')">Certificados</a> para ver mais detalhes sobre minhas conquistas e certificações.

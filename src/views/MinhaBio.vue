@@ -3,10 +3,10 @@
     <div class="sobre-texto">
       <h1>Sobre Mim</h1>
       <p>
-        Olá! Eu sou a Maria Eduarda Abreu, mas você pode me chamar de Duda. Sou estudante de Ciência da Computação pela Universidade do Estado do Rio de Janeiro.
+        Oie! Eu sou a Duda! Curso Ciência da Computação pela Universidade do Estado do Rio de Janeiro, tenho 22 anos e sou carioca da gema. Sou desenvolvedora Full Stack com experiência em algumas tecnologias e você pode conferir isso nas minhas Skills.
       </p>
       <p>
-        Estou entusiasmada com o mundo da tecnologia e sempre buscando aprender mais. Se quiser saber mais sobre minhas certificações e conquistas, fique à vontade para explorar mais em <a href="https://www.linkedin.com/in/mariaeduardaabreu/" target="_blank">meu LinkedIn</a>.
+        Meu jogo favorito é Undertale, sou top 0.01% ouvinte da SZA no Spotify, minha série favorita é The Boys e sou ratinha de academia
       </p>
     </div>
   </div>
