@@ -10,8 +10,7 @@
   "dependencies": {
     "@ssense/vue-carousel": "^0.6.5",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13",
-    "vue-carousel": "^0.18.0",
+    "vue": "^3.4.33",
     "vue-router": "^4.4.0"
   },
   "devDependencies": {
@@ -19,7 +18,7 @@
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-service": "^3.3.1",
+    "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.4.33",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",

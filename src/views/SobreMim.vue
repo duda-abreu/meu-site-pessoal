@@ -1,51 +1,58 @@
 <template>
-    <div class="sobre-container">
-      <div class="sobre-texto">
-        <h1>Sobre Mim</h1>
-        <p>
-          Oie! Eu sou Duda!ou estudante de Ciência da Computação pela Universidade do Estado do Rio de Janeiro.
-        </p>
-        <p>
-          Estou apaixonada por tecnologia e aprendizado contínuo. Clique em <a @click="abrirModal('certificados')">Certificados</a> para ver mais detalhes sobre minhas conquistas e certificações.
-        </p>
-      </div>
+  <div class="sobre-container">
+    <div class="sobre-texto">
+      <h1>Sobre Mim</h1>
+      <p>
+        Oie! Eu sou a Duda! Curso Ciência da Computação pela Universidade do Estado do Rio de Janeiro, tenho 22 anos e sou carioca da gema. Sou desenvolvedora Full Stack com experiência em algumas tecnologias e você pode conferir isso nas minhas Skills.
+      </p>
+      <p>
+        Meu jogo favorito é Undertale, sou top 0.01% ouvinte da SZA no Spotify, minha série favorita é The Boys e sou ratinha de academia
+      </p>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    methods: {
-      abrirModal(modalType) {
-        // Lógica para abrir o modal
-      }
-    }
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      // Dados removidos relacionados ao modal
+    };
+  },
+  methods: {
+    // Métodos removidos relacionados ao modal
   }
-  </script>
-  
-  <style scoped>
-  .sobre-container {
-    padding: 20px;
-    background-color: #f5f5f5;
-  }
-  
-  .sobre-texto h1 {
-    font-size: 2em;
-    color: #333;
-  }
-  
-  .sobre-texto p {
-    font-size: 1.2em;
-    margin-top: 10px;
-  }
-  
-  a {
-    color: #942f18;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  </style>
-  
+};
+</script>
+
+<style scoped>
+.sobre-container {
+  padding: 20px;
+}
+
+.sobre-texto {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sobre-texto h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.sobre-texto p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+a {
+  color: #942f18;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
