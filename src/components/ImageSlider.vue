@@ -21,11 +21,11 @@
       return {
         currentIndex: 0,
         images: [
-          { src: 'theboys.jpg', description: 'Descrição para The Boys.' },
-          { src: 'sza.jpg', description: 'Descrição para SZA.' },
-          { src: 'hellokitty.jpg', description: 'Descrição para Hello Kitty.' },
-          { src: 'itacoa.jpg', description: 'Descrição para Itacoa.' },
-          { src: 'undertale.jpg', description: 'Descrição para Undertale.' },
+          { src: 'theboys.jpg', description: 'Minha série favorita' },
+          { src: 'sza.jpg', description: 'Sou top 0.01% ouvinte da SZA no Spotify! Fui para o Lollapalooza 2024 só pelo show dela' },
+          { src: 'hellokitty.jpg', description: 'Tento ser ratinha de academia nas horas vagas' },
+          { src: 'itacoa.jpg', description: 'Meu restaurante favorito é do vencedor do Masterchef Profissionais 2018: Rafa Gomes' },
+          { src: 'undertale.jpg', description: 'Já perdi a conta de quandas vezes zerei esse jogo (e chorei em todas...😢)' },
         ],
       };
     },
@@ -60,43 +60,44 @@
   }
   
   .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
   
   .slide img {
-    width: 100%; /* Ajusta a largura da imagem ao tamanho do slide */
-    height: auto; /* Mantém a proporção da imagem */
-    max-height: 400px; /* Define a altura máxima para as imagens */
-    object-fit: cover; /* Faz a imagem cobrir o contêiner sem distorção */
-  }
+  width: 100%;
+  height: 400px; /* Altura fixa para todas as imagens */
+  object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
+}
   
   .prev-button,
-  .next-button {
-    position: absolute;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    transform: translateY(-50%);
-  }
+.next-button {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  transform: translateY(-50%);
+  z-index: 1; /* Garante que o botão fique acima das imagens */
+}
+
   
   .prev-button {
-    left: 10px;
-  }
-  
-  .next-button {
-    right: 10px;
-  }
-  </style>
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+</style>
   
   
