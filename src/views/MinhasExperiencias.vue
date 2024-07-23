@@ -1,16 +1,20 @@
 <template>
-  <div class="minhas-experiencias">
+  <div id="minhas-experiencias" class="minhas-experiencias">
     <h2>Minhas Experiências</h2>
     <ul>
       <li v-for="experiencia in experiencias" :key="experiencia.id">
-        <h3>{{ experiencia.titulo }}</h3>
-        <p>{{ experiencia.empresa }}</p>
-        <p>{{ experiencia.periodo }}</p>
-        <ul>
-          <li v-for="responsabilidade in experiencia.responsabilidades" :key="responsabilidade">
-            {{ responsabilidade }}
-          </li>
-        </ul>
+        <h3 @click="toggleDetails(experiencia.id)" class="cargo-titulo">
+          {{ experiencia.titulo }}
+        </h3>
+        <div v-if="experiencia.showDetails" class="detalhes-experiencia">
+          <p>{{ experiencia.empresa }}</p>
+          <p>{{ experiencia.periodo }}</p>
+          <ul>
+            <li v-for="responsabilidade in experiencia.responsabilidades" :key="responsabilidade">
+              {{ responsabilidade }}
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
   </div>
@@ -32,18 +36,20 @@ export default {
             "Uso de API para verificação de raios de atendimentos e interação com Virtual Machines para realização de backups, instalações e atualizações próprias da empresa.",
             "Construção de cadernos para homologação de projetos, tradução e adaptação de manuais de conhecimentos técnicos.",
           ],
+          showDetails: false
         },
         {
           id: 2,
           titulo: "Estagiária de PMO",
           empresa: "Icatu Seguros",
-          periodo: "2022-04-01 - Presente",
+          periodo: "mar de 2023 - ago de 2023",
           responsabilidades: [
-            "Apoio na manutenção do backlog de demandas das linhas de negócio, elaboração de dashboards operacionais/executivos e monitoramento de desempenho de projetos.", 
+            "Apoio na manutenção do backlog de demandas das linhas de negócio, elaboração de dashboards operacionais/executivos e monitoramento de desempenho de projetos.",
             "Colaboração na análise do fluxo da gestão do portfólio dos setores de atividade propondo melhorias e registrando em relatórios.",
             "Suporte na criação de diagnósticos de demandas e projetos construindo materiais de multiplicação de conhecimento para demais áreas internas.",
             "Auxílio na criação de pipelines e de usuários em Sistema de Entrega de Projetos.",
           ],
+          showDetails: false
         },
         {
           id: 3,
@@ -51,33 +57,41 @@ export default {
           empresa: "IBM",
           periodo: "set de 2023 - o momento",
           responsabilidades: [
-            "Responsável pelo Security Office para concessão de acessos a sistemas via mainframe/web e sua documentação para monitoramento.", 
+            "Responsável pelo Security Office para concessão de acessos a sistemas via mainframe/web e sua documentação para monitoramento.",
             "Extração de dados para elaboração de planilhas Excel.",
-            "Alteração, análise e desenvolvimento de jobs em JCL e programas em PL/I.", 
-            "Realização de relatórios diários de controle interno.", 
+            "Alteração, análise e desenvolvimento de jobs em JCL e programas em PL/I.",
+            "Realização de relatórios diários de controle interno.",
             "Identificação e solução de vulnerabilidades em aplicação utilizando a ferramenta Contrast Security.",
             "Criação e gerenciamento de pipelines de implantação eficientes para entrega de código em ambientes de testes e produção com Cirrus CI/CD.",
             "Levantamento da relação de usuários ativos e seus acessos para revalidação para fins de compliance.",
           ],
+          showDetails: false
         },
       ],
     };
   },
   methods: {
-    // Add any additional methods here
+    toggleDetails(id) {
+      const experiencia = this.experiencias.find(exp => exp.id === id);
+      experiencia.showDetails = !experiencia.showDetails;
+    }
   },
 };
 </script>
 
 <style scoped>
 .minhas-experiencias {
-  margin-top: 30px;
+  margin-top: 5px; /* Aumentei a margem para empurrar o componente mais para baixo */
+  background-color: #F9DBD4; /* Cor de fundo para o componente */
+  color: #942F18; /* Cor da fonte do componente */
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .minhas-experiencias h2 {
   text-align: center;
-  font-size: 1.8em;
-  margin-bottom: 20px;
+  font-size: 2.0em;
+  margin-bottom: 0px;
 }
 
 .minhas-experiencias ul {
@@ -86,21 +100,34 @@ export default {
 }
 
 .minhas-experiencias li {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #F9DBD4;
   padding-bottom: 10px;
 }
 
 .minhas-experiencias h3 {
   font-size: 1.4em;
   margin-top: 0;
+  cursor: pointer; /* Adicione um cursor de ponteiro para indicar que é clicável */
+  color: #5D2510; /* Cor dos links clicáveis */
+  text-decoration: underline;
 }
 
 .minhas-experiencias p {
   margin-top: 5px;
+  margin-bottom: 5px; /* Ajuste a margem inferior para diminuir o espaçamento entre as frases */
 }
 
 .minhas-experiencias ul ul {
   margin-left: 20px;
+}
+
+.cargo-titulo {
+  color: #5D2510; /* Define a cor dos links clicáveis */
+  font-size: 1em; /* Diminui o tamanho da fonte */
+}
+
+.detalhes-experiencia ul li {
+  margin-bottom: 6px; /* Ajuste a margem inferior para diminuir o espaçamento entre as responsabilidades */
 }
 </style>

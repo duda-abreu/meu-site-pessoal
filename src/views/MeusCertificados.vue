@@ -36,6 +36,11 @@ export default {
           id: 3,
           nome: 'Cambridge Certificate in Advanced English (CAE)',
           imagem: 'CambridgeResult.jpg'
+        },
+        {
+          id: 4,
+          nome: 'HTML e CSS',
+          imagem: 'CertHtmlCSS.jpg'
         }
       ],
       certificadoSelecionado: null,
@@ -61,14 +66,40 @@ export default {
 <style scoped>
 .certificados {
   margin: 20px;
+  background-color: #F9DBD4; /* Cor de fundo para os certificados */
+  padding: 20px;
+  border-radius: 8px;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif; /* Garantindo a fonte correta */
+  color: #942f18; /* Cor da fonte */
 }
+
+.certificados h2 {
+  color: #942f18; /* Cor da fonte do título */
+  font-size: 2.5em; /* Tamanho da fonte do título */
+  text-align: center;
+}
+
 .certificados ul {
   list-style-type: none;
   padding: 0;
 }
+
 .certificados li {
-  margin: 5px 0;
+  margin: 10px 0;
+  font-size: 1.2em; /* Tamanho da fonte dos itens */
 }
+
+.certificados a {
+  color: #942f18; /* Cor dos links clicáveis */
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif; /* Garantindo a fonte dos links */
+}
+
+.certificados a:hover {
+  color: #5D2510; /* Cor dos links ao passar o mouse */
+}
+
 .modal {
   display: block;
   position: fixed;
@@ -80,24 +111,26 @@ export default {
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
 }
+
 .modal img {
   margin: auto;
   display: block;
   max-width: 90%;
   max-height: 90%;
 }
+
 .fechar {
-  color: #aaa;
+  color: #fff;
   float: right;
-  font-size: 28px;
+  font-size: 2em;
   font-weight: bold;
   cursor: pointer;
   padding: 10px;
 }
+
 .fechar:hover,
 .fechar:focus {
-  color: black;
+  color: #ddd;
   text-decoration: none;
-  cursor: pointer;
 }
 </style>

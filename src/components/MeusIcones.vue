@@ -1,16 +1,16 @@
 <template>
-  <div class="icones">
-    <a :href="linkedinUrl" target="_blank">
-      <img src="@/assets/linkedin-icon.png" alt="LinkedIn">
+  <div class="meus-icones">
+    <a :href="linkedinUrl" target="_blank" class="icon">
+      <img src="@/assets/linkedin-icon.png" alt="LinkedIn" />
     </a>
-    <a :href="githubUrl" target="_blank">
-      <img src="@/assets/github-icon.png" alt="GitHub">
+    <a :href="githubUrl" target="_blank" class="icon">
+      <img src="@/assets/github-icon.png" alt="GitHub" />
     </a>
-    <a :href="whatsappUrl" target="_blank">
-      <img src="@/assets/whatsapp-icon.png" alt="WhatsApp">
+    <a :href="whatsappUrl" target="_blank" class="icon">
+      <img src="@/assets/whatsapp-icon.png" alt="WhatsApp" />
     </a>
-    <a :href="gmailUrl" target="_blank">
-      <img src="@/assets/gmail-icon.png" alt="Gmail">
+    <a :href="gmailUrl" target="_blank" class="icon">
+      <img src="@/assets/gmail-icon.png" alt="E-mail" />
     </a>
   </div>
 </template>
@@ -39,13 +39,20 @@ export default {
 </script>
 
 <style scoped>
-.icones {
+.meus-icones {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
+  margin-top: 20px;
 }
-.icones img {
+
+.icon img {
   width: 40px;
   height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover img {
+  transform: scale(1.1);
 }
 </style>
