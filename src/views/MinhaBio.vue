@@ -1,14 +1,12 @@
 <template>
   <div class="sobre-container">
     <div class="sobre-texto">
-      <h1>Sobre Mim</h1>
       <p>
-        Oie! Eu sou a Duda! Curso Ciência da Computação pela Universidade do Estado do Rio de Janeiro, tenho 22 anos e sou carioca da gema. Sou desenvolvedora Full Stack com experiência em algumas tecnologias e você pode conferir isso nas minhas Skills.
+        Oie! Tenho 22 anos e sou carioca da gema. Sou desenvolvedora Full Stack com experiência em algumas tecnologias que você pode conferir nas minhas Skills.
       </p>
-      <p>
-        Meu jogo favorito é Undertale, sou top 0.01% ouvinte da SZA no Spotify, minha série favorita é The Boys e sou ratinha de academia
-      </p>
-      <ImageSlider />
+      <p> Aqui embaixo tem mais algumas curiosidades sobre mim </p>
+      <ImageSlider @description-change="updateDescription" />
+      <p>{{ currentDescription }}</p>
     </div>
   </div>
 </template>
@@ -19,6 +17,16 @@ import ImageSlider from '@/components/ImageSlider.vue';
 export default {
   components: {
     ImageSlider
+  },
+  data() {
+    return {
+      currentDescription: ''
+    };
+  },
+  methods: {
+    updateDescription(description) {
+      this.currentDescription = description;
+    }
   }
 };
 </script>
@@ -35,7 +43,7 @@ export default {
 }
 
 .sobre-texto h1 {
-  font-size: 2.5em;
+  font-size: 1.2em;
   margin-bottom: 0.5em;
 }
 
@@ -45,7 +53,7 @@ export default {
 }
 
 a {
-  color: #942f18;
+  color: #533153;
   text-decoration: none;
   font-weight: bold;
 }

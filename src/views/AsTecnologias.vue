@@ -17,31 +17,31 @@ export default {
         {
           id: 1,
           nome: "Vue.js",
-          imagem: "vue.png",
+          imagem: "vue.svg",
           link: "https://vuejs.org/"
         },
         {
           id: 2,
           nome: "Python",
-          imagem: "python.png",
+          imagem: "python.svg",
           link: "https://www.python.org"
         },
         {
           id: 3,
           nome: "Java",
-          imagem: "java.png",
+          imagem: "java.svg",
           link: "https://www.java.com/pt-BR/"
         },
         {
           id: 4,
           nome: "Git",
-          imagem: "git.png",
+          imagem: "git.svg",
           link: "https://git-scm.com"
         },
         {
           id: 5,
           nome: "Excel",
-          imagem: "excel.png",
+          imagem: "excel.svg",
           link: "https://www.microsoft.com/pt-br/microsoft-365/excel"
         }
       ]
@@ -52,16 +52,16 @@ export default {
 
 <style scoped>
 .tecnologias {
-  margin-top: 0x;
+  margin-top: 0;
   background-color: #F9DBD4;
-  color: ##942F18;
+  color: #533153;
   padding: 20px;
   border-radius: 8px;
 }
 
 .tecnologias h2 {
   text-align: center;
-  font-size: 2.0em;
+  font-size: 2em;
   margin-bottom: 20px;
 }
 

@@ -70,11 +70,11 @@ export default {
   padding: 20px;
   border-radius: 8px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif; /* Garantindo a fonte correta */
-  color: #942f18; /* Cor da fonte */
+  color: #533153; /* Cor da fonte */
 }
 
 .certificados h2 {
-  color: #942f18; /* Cor da fonte do título */
+  color: #533153; /* Cor da fonte do título */
   font-size: 2.5em; /* Tamanho da fonte do título */
   text-align: center;
 }
@@ -90,14 +90,14 @@ export default {
 }
 
 .certificados a {
-  color: #942f18; /* Cor dos links clicáveis */
+  color: #533153; /* Cor dos links clicáveis */
   text-decoration: underline;
   cursor: pointer;
   font-family: 'Avenir', Helvetica, Arial, sans-serif; /* Garantindo a fonte dos links */
 }
 
 .certificados a:hover {
-  color: #5D2510; /* Cor dos links ao passar o mouse */
+  color: #C8A2C8; /* Cor dos links ao passar o mouse */
 }
 
 .modal {

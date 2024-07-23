@@ -40,7 +40,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid #942F18; /* Cor da borda de destaque */
+  border: 3px solid #533153; /* Cor da borda de destaque */
   border-radius: 50%;
   z-index: 0; /* Coloca a borda atrás da imagem */
   box-sizing: border-box; /* Garante que a borda não aumente o tamanho total */

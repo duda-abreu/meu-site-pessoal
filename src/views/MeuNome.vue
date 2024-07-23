@@ -23,7 +23,7 @@ export default {
 }
 
 .meu-nome h1 {
-  color: #942F18; /* Ajusta a cor da fonte */
+  color: #533153; /* Ajusta a cor da fonte */
   font-size: 2em; /* Ajusta o tamanho da fonte, se necessário */
 }
 

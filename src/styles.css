@@ -1,0 +1,10 @@
+/* style.css */
+body {
+    background-color: #B785B7;
+  }
+  
+  .my-global-class {
+    /* Styles from the global component */
+    background-color: #B785B7;
+  }
+  

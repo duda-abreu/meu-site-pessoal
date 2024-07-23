@@ -3,17 +3,24 @@
     <h2>Minhas Experiências</h2>
     <ul>
       <li v-for="experiencia in experiencias" :key="experiencia.id">
-        <h3 @click="toggleDetails(experiencia.id)" class="cargo-titulo">
-          {{ experiencia.titulo }}
-        </h3>
-        <div v-if="experiencia.showDetails" class="detalhes-experiencia">
-          <p>{{ experiencia.empresa }}</p>
-          <p>{{ experiencia.periodo }}</p>
-          <ul>
-            <li v-for="responsabilidade in experiencia.responsabilidades" :key="responsabilidade">
-              {{ responsabilidade }}
-            </li>
-          </ul>
+        <div class="experiencia-item">
+          <a :href="experiencia.empresaLink" target="_blank" class="empresa-link">
+            <img :src="require(`@/assets/${experiencia.empresaImagem}`)" :alt="experiencia.empresa" class="empresa-imagem">
+          </a>
+          <div class="experiencia-info">
+            <h3 @click="toggleDetails(experiencia.id)" class="cargo-titulo">
+              {{ experiencia.titulo }}
+            </h3>
+            <div v-if="experiencia.showDetails" class="detalhes-experiencia">
+              <p>{{ experiencia.empresa }}</p>
+              <p>{{ experiencia.periodo }}</p>
+              <ul>
+                <li v-for="responsabilidade in experiencia.responsabilidades" :key="responsabilidade">
+                  {{ responsabilidade }}
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </li>
     </ul>
@@ -30,6 +37,8 @@ export default {
           titulo: "Estagiária de Canais Digitais",
           empresa: "Domino's Pizza",
           periodo: "abr de 2022 - fev de 2023",
+          empresaLink: "https://www.dominospizza.com.br",
+          empresaImagem: "dominos.png", // Nome da imagem da empresa
           responsabilidades: [
             "Análise de inserções de sistemas e investigação de erros a partir de consultas a bancos SQL e logs em XML.",
             "Elaboração de cenários e realização de testes para sanção de integração com agregadores de aplicativos.",
@@ -43,6 +52,8 @@ export default {
           titulo: "Estagiária de PMO",
           empresa: "Icatu Seguros",
           periodo: "mar de 2023 - ago de 2023",
+          empresaLink: "https://www.icatuseguros.com.br",
+          empresaImagem: "icatu.png", // Nome da imagem da empresa
           responsabilidades: [
             "Apoio na manutenção do backlog de demandas das linhas de negócio, elaboração de dashboards operacionais/executivos e monitoramento de desempenho de projetos.",
             "Colaboração na análise do fluxo da gestão do portfólio dos setores de atividade propondo melhorias e registrando em relatórios.",
@@ -56,6 +67,8 @@ export default {
           titulo: "Estagiária de desenvolvimento",
           empresa: "IBM",
           periodo: "set de 2023 - o momento",
+          empresaLink: "https://www.ibm.com",
+          empresaImagem: "ibm.png", // Nome da imagem da empresa
           responsabilidades: [
             "Responsável pelo Security Office para concessão de acessos a sistemas via mainframe/web e sua documentação para monitoramento.",
             "Extração de dados para elaboração de planilhas Excel.",
@@ -83,7 +96,7 @@ export default {
 .minhas-experiencias {
   margin-top: 5px; /* Aumentei a margem para empurrar o componente mais para baixo */
   background-color: #F9DBD4; /* Cor de fundo para o componente */
-  color: #942F18; /* Cor da fonte do componente */
+  color: #533153; /* Cor da fonte do componente */
   padding: 20px;
   border-radius: 8px;
 }
@@ -105,11 +118,33 @@ export default {
   padding-bottom: 10px;
 }
 
+.experiencia-item {
+  display: grid;
+  grid-template-columns: 50px 1fr; /* Define a largura da imagem e a área para o texto */
+  align-items: center; /* Alinha a imagem e o texto verticalmente no centro */
+  gap: 15px; /* Espaçamento entre a imagem e o título */
+}
+
+.empresa-link {
+  display: flex; /* Garante que a imagem se ajuste corretamente dentro do link */
+  align-items: center;
+}
+
+.empresa-imagem {
+  width: 50px; /* Ajuste o tamanho da imagem para garantir a consistência */
+  height: 50px; /* Ajuste a altura da imagem para garantir que seja igual ao tamanho */
+  object-fit: contain; /* Mantém a proporção da imagem */
+}
+
+.experiencia-info {
+  flex-grow: 1; /* Faz com que a informação ocupe o restante do espaço */
+}
+
 .minhas-experiencias h3 {
   font-size: 1.4em;
   margin-top: 0;
   cursor: pointer; /* Adicione um cursor de ponteiro para indicar que é clicável */
-  color: #5D2510; /* Cor dos links clicáveis */
+  color: #B785B7; /* Cor dos links clicáveis */
   text-decoration: underline;
 }
 
@@ -123,7 +158,7 @@ export default {
 }
 
 .cargo-titulo {
-  color: #5D2510; /* Define a cor dos links clicáveis */
+  color: #C8A2C8; /* Define a cor dos links clicáveis */
   font-size: 1em; /* Diminui o tamanho da fonte */
 }
 
