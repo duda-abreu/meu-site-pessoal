@@ -8,19 +8,17 @@
       <p>
         Meu jogo favorito é Undertale, sou top 0.01% ouvinte da SZA no Spotify, minha série favorita é The Boys e sou ratinha de academia
       </p>
+      <ImageSlider />
     </div>
   </div>
 </template>
 
 <script>
+import ImageSlider from '@/components/ImageSlider.vue';
+
 export default {
-  data() {
-    return {
-      // Dados removidos relacionados ao modal
-    };
-  },
-  methods: {
-    // Métodos removidos relacionados ao modal
+  components: {
+    ImageSlider
   }
 };
 </script>

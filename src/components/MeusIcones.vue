@@ -1,16 +1,16 @@
 <template>
-  <div class="icones">
-    <a :href="linkedinUrl" target="_blank" class="icone-linkedin">
-      <img src="@/assets/linkedin-icon.png" alt="LinkedIn" class="icone">
+  <div class="meus-icones">
+    <a :href="linkedinUrl" target="_blank" class="icon">
+      <img src="@/assets/linkedin-icon.png" alt="LinkedIn" />
     </a>
-    <a :href="githubUrl" target="_blank" class="icone-github">
-      <img src="@/assets/github-icon.png" alt="GitHub" class="icone">
+    <a :href="githubUrl" target="_blank" class="icon">
+      <img src="@/assets/github-icon.png" alt="GitHub" />
     </a>
-    <a :href="whatsappUrl" target="_blank" class="icone-whatsapp">
-      <img src="@/assets/whatsapp-icon.png" alt="WhatsApp" class="icone">
+    <a :href="whatsappUrl" target="_blank" class="icon">
+      <img src="@/assets/whatsapp-icon.png" alt="WhatsApp" />
     </a>
-    <a :href="gmailUrl" target="_blank" class="icone-gmail">
-      <img src="@/assets/gmail-icon.png" alt="Gmail" class="icone">
+    <a :href="gmailUrl" target="_blank" class="icon">
+      <img src="@/assets/gmail-icon.png" alt="E-mail" />
     </a>
   </div>
 </template>
@@ -39,36 +39,20 @@ export default {
 </script>
 
 <style scoped>
-.icones {
+.meus-icones {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.icone {
+.icon img {
   width: 40px;
   height: 40px;
-  border-radius: 20%; /* Torna os ícones redondos */
-  overflow: hidden; /* Esconde qualquer parte do ícone que ultrapasse o raio */
-  transition: transform 0.3s ease-in-out; /* Adiciona transição suave */
+  transition: transform 0.3s ease;
 }
 
-/* Adiciona animação de rotação */
-.icone:hover {
-  transform: rotate(360deg);
-}
-
-/* Estilizações específicas para cada ícone */
-.icone-linkedin {
-  background-color: #F9DBD4; /* Cor de fundo do LinkedIn */
-}
-.icone-github {
-  background-color: #F9DBD4; /* Cor de fundo do GitHub */
-}
-.icone-whatsapp {
-  background-color: #F9DBD4; /* Cor de fundo do WhatsApp */
-}
-.icone-gmail {
-  background-color: #F9DBD4; /* Cor de fundo do Gmail */
+.icon:hover img {
+  transform: scale(1.1);
 }
 </style>

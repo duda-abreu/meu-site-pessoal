@@ -8,7 +8,7 @@
           class="slide"
           :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
         >
-          <img :src="require(`@/assets/${image}`)" :alt="`Slide ${index + 1}`" />
+          <img :src="require(`@/assets/${image.src}`)" :alt="`Slide ${index + 1}`" />
         </div>
       </div>
       <button @click="nextSlide" class="next-button">❯</button>
@@ -21,11 +21,11 @@
       return {
         currentIndex: 0,
         images: [
-          'theboys.jpg',
-          'sza.jpg',
-          'hellokitty.jpg',
-          'itacoa.jpg',
-          'undertale.jpg',
+          { src: 'theboys.jpg', description: 'Descrição para The Boys.' },
+          { src: 'sza.jpg', description: 'Descrição para SZA.' },
+          { src: 'hellokitty.jpg', description: 'Descrição para Hello Kitty.' },
+          { src: 'itacoa.jpg', description: 'Descrição para Itacoa.' },
+          { src: 'undertale.jpg', description: 'Descrição para Undertale.' },
         ],
       };
     },
@@ -33,10 +33,18 @@
       prevSlide() {
         this.currentIndex =
           (this.currentIndex - 1 + this.images.length) % this.images.length;
+        this.updateDescription();
       },
       nextSlide() {
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
+        this.updateDescription();
       },
+      updateDescription() {
+        this.$emit('description-change', this.images[this.currentIndex].description);
+      },
+    },
+    mounted() {
+      this.updateDescription(); // Emitir a descrição inicial
     },
   };
   </script>
@@ -45,9 +53,10 @@
   .slider-container {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Tamanho máximo do slider */
+    max-width: 600px; /* Largura máxima do slider */
     margin: auto;
     overflow: hidden;
+    border: 2px solid #ddd; /* Opcional: Adiciona uma borda ao slider */
   }
   
   .slides {
@@ -61,9 +70,10 @@
   }
   
   .slide img {
-    width: 100%;
-    height: 400px; /* Altura fixa para todas as imagens */
-    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
+    width: 100%; /* Ajusta a largura da imagem ao tamanho do slide */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 400px; /* Define a altura máxima para as imagens */
+    object-fit: cover; /* Faz a imagem cobrir o contêiner sem distorção */
   }
   
   .prev-button,
@@ -78,7 +88,6 @@
     cursor: pointer;
     font-size: 24px;
     transform: translateY(-50%);
-    z-index: 1; /* Garante que o botão fique acima das imagens */
   }
   
   .prev-button {
