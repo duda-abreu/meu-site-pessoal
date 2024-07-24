@@ -99,12 +99,15 @@ export default {
   color: #533153; /* Cor da fonte do componente */
   padding: 20px;
   border-radius: 8px;
+  text-align: center; /* Alinha todo o conteúdo no centro */
+  display: flex; /* Usar flexbox para layout */
+  flex-direction: column; /* Organizar os itens em uma coluna */
+  align-items: center; /* Alinhar os itens horizontalmente no centro */
 }
 
 .minhas-experiencias h2 {
-  text-align: center;
   font-size: 2.0em;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .minhas-experiencias ul {
@@ -113,16 +116,32 @@ export default {
 }
 
 .minhas-experiencias li {
-  margin-bottom: 0px;
+  margin-bottom: 20px; /* Adicionei margem entre as experiências */
   border-bottom: 1px solid #F9DBD4;
   padding-bottom: 10px;
 }
 
 .experiencia-item {
-  display: grid;
-  grid-template-columns: 50px 1fr; /* Define a largura da imagem e a área para o texto */
-  align-items: center; /* Alinha a imagem e o texto verticalmente no centro */
+  display: flex; /* Usar flexbox para layout */
+  flex-direction: column; /* Organizar os itens em uma coluna */
+  align-items: center; /* Alinhar os itens horizontalmente no centro */
   gap: 15px; /* Espaçamento entre a imagem e o título */
+}
+
+.experiencia-info {
+  flex-grow: 1; /* Faz com que a informação ocupe o restante do espaço */
+  text-align: center; /* Alinhar todo o conteúdo do .experiencia-info ao centro */
+  transition: transform 0.3s ease-in-out; /* Adicionar transição para o efeito de expansão */
+}
+
+.experiencia-info h3 {
+  cursor: pointer; /* Adicione um cursor de ponteiro para indicar que é clicável */
+  color: #B785B7; /* Cor dos links clicáveis */
+  text-decoration: underline;
+}
+
+.experiencia-info:hover {
+  transform: translateX(-10px); /* Expandir o .experiencia-info para a esquerda quando passar o mouse */
 }
 
 .empresa-link {
@@ -139,6 +158,7 @@ export default {
 .experiencia-info {
   flex-grow: 1; /* Faz com que a informação ocupe o restante do espaço */
 }
+
 
 .minhas-experiencias h3 {
   font-size: 1.4em;

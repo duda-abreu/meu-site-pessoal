@@ -70,13 +70,29 @@ li {
   margin-right: 8px; /* Espaçamento entre o ícone e o texto */
 }
 
+a:hover {
+  position: relative; /* Allow positioning of the pseudo-element */
+}
+
+a:hover::after {
+  content: ''; /* Empty content for the pseudo-element */
+  position: absolute; /* Absolute positioning within the link */
+  bottom: 0; /* Position at the bottom of the link */
+  left: 0;
+  width: 100%; /* Cover the entire width of the link */
+  height: 2px; /* Height of the underline */
+  background-color: #A668A6; /* Desired underline color */
+  box-shadow: none; /* Remove the box shadow */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
 a {
-  color: #533153; /* Cor do texto */
-  text-decoration: none; /* Remove sublinhado do link */
-  font-size: 0.8em; /* Tamanho da fonte reduzido */
-  display: flex; /* Usar flexbox para alinhamento interno */
-  align-items: center; /* Alinhar texto e ícone verticalmente */
-  font-weight: bold; /* Fonte em negrito */
+  color: #533153; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 0.8em; /* Font size */
+  font-weight: bold; /* Bold font weight */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Vertical alignment */
 }
 
 a.active {
