@@ -7,11 +7,9 @@
   </div>
 </template>
 
-
-
 <script>
 import TheNavegacao from './components/TheNavegacao.vue';
-import './styles.css'; // Import external CSS file
+import './styles.css'; // Importa o CSS
 
 export default {
   components: {
@@ -32,11 +30,12 @@ html, body {
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #533153;
-  background-color: #F9DBD4;
+  color: #C0C0C0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: rgb(39,30,45);
+background: linear-gradient(90deg, rgba(39,30,45,1) 0%, rgba(83,49,83,1) 90%, rgba(92,58,92,1) 100%);
 }
 
 .content {
@@ -49,4 +48,3 @@ html, body {
   padding: 20px;
 }
 </style>
-

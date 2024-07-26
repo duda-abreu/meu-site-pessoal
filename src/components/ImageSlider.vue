@@ -49,7 +49,6 @@ export default {
   max-width: 600px; /* Largura máxima do slider */
   margin: auto;
   overflow: hidden;
-  border: 2px solid #ddd; /* Opcional: Adiciona uma borda ao slider */
 }
 
 .slides {
@@ -94,6 +93,6 @@ export default {
 .description {
   margin-top: 20px;
   font-size: 1.2em;
-  color: #533153;
+  color: #C0C0C0;
 }
 </style>

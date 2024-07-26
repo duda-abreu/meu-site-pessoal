@@ -22,32 +22,26 @@
     </div>
     <!-- Modais -->
     <div v-if="mostrarModal === 'ciência-computacao'" class="modal" @click.self="fecharModal">
-      <div class="modal-content">
-        <span class="close" @click="fecharModal">&times;</span>
-        <img :src="require('@/assets/grade.jpg')" alt="Grade Curricular">
-      </div>
+      <img :src="require('@/assets/grade.jpg')" alt="Grade Curricular">
+      <span class="close" @click="fecharModal">&times;</span>
     </div>
     <div v-if="mostrarModal === 'certificados'" class="modal" @click.self="fecharModal">
-      <div class="modal-content">
-        <span class="close" @click="fecharModal">&times;</span>
-        <div class="certificados">
-          <div @click="abrirCertificado('CertGitGithub')">
-            <img :src="require('@/assets/CertGitGithub.jpg')" alt="Certificado GitHub">
-          </div>
-          <div @click="abrirCertificado('CambridgeResult')">
-            <img :src="require('@/assets/CambridgeResult.jpg')" alt="Certificado Cambridge Result">
-          </div>
-          <div @click="abrirCertificado('CertificadoExcel')">
-            <img :src="require('@/assets/CertificadoExcel.jpg')" alt="Certificado Excel">
-          </div>
+      <div class="certificados">
+        <div @click="abrirCertificado('CertGitGithub')">
+          <img :src="require('@/assets/CertGitGithub.jpg')" alt="Certificado GitHub">
+        </div>
+        <div @click="abrirCertificado('CambridgeResult')">
+          <img :src="require('@/assets/CambridgeResult.jpg')" alt="Certificado Cambridge Result">
+        </div>
+        <div @click="abrirCertificado('CertificadoExcel')">
+          <img :src="require('@/assets/CertificadoExcel.jpg')" alt="Certificado Excel">
         </div>
       </div>
+      <span class="close" @click="fecharModal">&times;</span>
     </div>
     <div v-if="modalCertificado !== ''" class="modal" @click.self="fecharModalCertificado">
-      <div class="modal-content">
-        <span class="close" @click="fecharModalCertificado">&times;</span>
-        <img :src="require(`@/assets/${modalCertificado}.jpg`)" alt="Certificado">
-      </div>
+      <img :src="require(`@/assets/${modalCertificado}.jpg`)" alt="Certificado">
+      <span class="close" @click="fecharModalCertificado">&times;</span>
     </div>
   </div>
 </template>
@@ -135,7 +129,7 @@ export default {
 }
 
 a {
-  color: #533153;
+  color: #C0C0C0;
   text-decoration: none;
   font-weight: bold;
 }
@@ -156,18 +150,10 @@ a:hover {
   align-items: center;
 }
 
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 80%;
-  max-height: 80%;
-  position: relative;
-}
-
-.modal-content img {
-  max-width: 100%;
-  max-height: 80vh;
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
   display: block;
 }
 
@@ -178,7 +164,7 @@ a:hover {
   font-size: 2em;
   font-weight: bold;
   cursor: pointer;
-  color: #000;
+  color: #fff;
 }
 
 .certificados {

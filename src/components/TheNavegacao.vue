@@ -81,13 +81,13 @@ a:hover::after {
   left: 0;
   width: 100%; /* Cover the entire width of the link */
   height: 2px; /* Height of the underline */
-  background-color: #A668A6; /* Desired underline color */
+  background-color: #34263e; /* Desired underline color */
   box-shadow: none; /* Remove the box shadow */
   transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 a {
-  color: #533153; /* Text color */
+  color: #C0C0C0; /* Text color */
   text-decoration: none; /* Remove underline */
   font-size: 0.8em; /* Font size */
   font-weight: bold; /* Bold font weight */

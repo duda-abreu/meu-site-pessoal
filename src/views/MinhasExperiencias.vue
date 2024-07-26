@@ -37,7 +37,7 @@ export default {
           titulo: "Estagiária de Canais Digitais",
           empresa: "Domino's Pizza",
           periodo: "abr de 2022 - fev de 2023",
-          empresaLink: "https://www.dominospizza.com.br",
+          empresaLink: "https://www.dominos.com.br",
           empresaImagem: "dominos.png", // Nome da imagem da empresa
           responsabilidades: [
             "Análise de inserções de sistemas e investigação de erros a partir de consultas a bancos SQL e logs em XML.",
@@ -95,8 +95,7 @@ export default {
 <style scoped>
 .minhas-experiencias {
   margin-top: 5px; /* Aumentei a margem para empurrar o componente mais para baixo */
-  background-color: #F9DBD4; /* Cor de fundo para o componente */
-  color: #533153; /* Cor da fonte do componente */
+  color: #C0C0C0; /* Cor da fonte do componente */
   padding: 20px;
   border-radius: 8px;
   text-align: center; /* Alinha todo o conteúdo no centro */
@@ -116,8 +115,6 @@ export default {
 }
 
 .minhas-experiencias li {
-  margin-bottom: 20px; /* Adicionei margem entre as experiências */
-  border-bottom: 1px solid #F9DBD4;
   padding-bottom: 10px;
 }
 
@@ -136,8 +133,7 @@ export default {
 
 .experiencia-info h3 {
   cursor: pointer; /* Adicione um cursor de ponteiro para indicar que é clicável */
-  color: #B785B7; /* Cor dos links clicáveis */
-  text-decoration: underline;
+  color: #C0C0C0; /* Cor dos links clicáveis */
 }
 
 .experiencia-info:hover {
@@ -161,11 +157,11 @@ export default {
 
 
 .minhas-experiencias h3 {
-  font-size: 1.4em;
+  font-size: 1.2em;
   margin-top: 0;
   cursor: pointer; /* Adicione um cursor de ponteiro para indicar que é clicável */
-  color: #B785B7; /* Cor dos links clicáveis */
-  text-decoration: underline;
+  color: #C0C0C0; /* Cor dos links clicáveis */
+  text-decoration: none;
 }
 
 .minhas-experiencias p {
@@ -178,7 +174,7 @@ export default {
 }
 
 .cargo-titulo {
-  color: #C8A2C8; /* Define a cor dos links clicáveis */
+  color: #C0C0C0; /* Define a cor dos links clicáveis */
   font-size: 1em; /* Diminui o tamanho da fonte */
 }
 

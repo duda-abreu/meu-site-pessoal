@@ -53,8 +53,8 @@ export default {
 <style scoped>
 .tecnologias {
   margin-top: 0;
-  background-color: #F9DBD4;
-  color: #533153;
+  /* background-color: #F9DBD4; */
+  color: #C0C0C03;
   padding: 20px;
   border-radius: 8px;
 }

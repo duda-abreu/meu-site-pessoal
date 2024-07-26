@@ -23,13 +23,13 @@ export default {
 }
 
 .meu-nome h1 {
-  color: #533153; /* Ajusta a cor da fonte */
+  color: #C0C0C0; /* Ajusta a cor da fonte */
   font-size: 2em; /* Ajusta o tamanho da fonte, se necessário */
 }
 
 .subtitulo {
   font-size: 0.9em; /* Ajusta o tamanho do subtítulo */
-  color: #666; /* Ajusta a cor do subtítulo */
+  color: #C0C0C0; /* Ajusta a cor do subtítulo */
   margin-top: 5px; /* Adiciona margem acima do subtítulo */
 }
 </style>
