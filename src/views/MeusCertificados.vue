@@ -25,7 +25,8 @@ export default {
       { id: 1, nome: 'Cambridge Certificate in Advanced English (CAE)', imagem: 'CambridgeResult.jpg' },
       { id: 2, nome: 'Excel Avançado', imagem: 'CertificadoExcel.jpg' },
       { id: 3, nome: 'Git e GitHub', imagem: 'CertGitGithub.jpg' },
-      { id: 4, nome: 'HTML e CSS', imagem: 'CertHtmlCSS.jpg' }
+      { id: 4, nome: 'HTML e CSS', imagem: 'CertHtmlCSS.jpg' },
+      { id: 5, nome: 'Introdução ao Ambiente .NET e Projetos Colaborativos', imagem: 'CertNetColab.jpg' }
     ],
       certificadoSelecionado: null,
       mostrarModal: false
