@@ -42,13 +42,14 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
+  background-color: transparent; /* Fundo transparente */
   color: #fff;
   padding: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Garante que o menu fique acima de outros conteúdos */
 }
 
 ul {
@@ -65,8 +66,8 @@ li {
 }
 
 .nav-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px; /* Ajusta o tamanho do ícone */
+  height: 24px; /* Ajusta o tamanho do ícone */
   margin-right: 8px;
 }
 
@@ -78,24 +79,39 @@ a {
   font-family: 'Figtree', sans-serif;
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease, color 0.3s ease; 
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-  transform: scale(1.1); 
-  color: #fff; /* muda a cor ao passar o mouse */
-  text-decoration: none; 
+  transform: scale(1.1);
+  color: #fff;
+  text-decoration: none;
 }
 
-a:hover::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  transition: background-color 0.3s ease;
+/* Estilos Específicos para Dispositivos Móveis */
+@media (max-width: 768px) {
+  nav {
+    padding: 10px; /* Ajusta o padding para telas menores */
+  }
+
+  ul {
+    /* Mantém os itens do menu na horizontal */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza o menu */
+  }
+
+  li {
+    margin: 5px; /* Ajusta o espaçamento entre itens do menu */
+  }
+
+  .nav-icon {
+    width: 20px; /* Reduz o tamanho do ícone em dispositivos móveis */
+    height: 20px; /* Reduz o tamanho do ícone em dispositivos móveis */
+  }
+
+  a {
+    font-size: 0.9em; /* Ajusta o tamanho da fonte em dispositivos móveis */
+  }
 }
-
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="sobre-container">
     <div class="sobre-texto">
-      <p>
+      <p class="intro-texto">
         Oie! Tenho 22 anos e sou carioca da gema. Sou desenvolvedora Full Stack com experiência em algumas tecnologias que você pode conferir nas minhas 
         <router-link to="/skills">Skills</router-link> 
         ou olhar meu 
@@ -49,22 +49,31 @@ export default {
 <style scoped>
 .sobre-container {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sobre-texto {
   max-width: 800px;
-  margin: 0 auto;
   text-align: center;
 }
 
-.sobre-texto h2 {
-  margin: 20px 0;
-  font-size: 1.5em;
-}
-
-.sobre-texto p {
+.intro-texto {
   font-size: 1.2em;
   line-height: 1.6;
+  margin-bottom: 60px; 
+}
+
+.titulo-curiosidades {
+  font-size: 1.5em;
+  margin-top: 0; 
+}
+
+.descricao {
+  margin-top: 30px;
+  font-size: 1.2em;
+  color: #C0C0C0;
 }
 
 .link {
@@ -83,7 +92,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease;
 }
 
 .modal img {
@@ -113,9 +121,18 @@ a:hover {
   text-decoration: underline;
 }
 
-.descricao {
-  margin-top: 20px;
-  font-size: 1.2em;
-  color: #C0C0C0;
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .sobre-container {
+    padding: 10px;
+  }
+
+  .intro-texto {
+    margin-bottom: 40px; 
+  }
+
+  .sobre-texto {
+    padding: 0 10px;
+  }
 }
 </style>

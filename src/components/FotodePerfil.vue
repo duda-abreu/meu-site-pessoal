@@ -11,7 +11,7 @@
 export default {
   data() {
     return {
-      fotoSrc: require('@/assets/nova-foto.jpg') //nome da foto
+      fotoSrc: require('@/assets/nova-foto.jpg') 
     };
   }
 };

@@ -94,11 +94,11 @@ export default {
 };
 </script>
 
-<style scoped><style scoped>
+<style scoped>
 .minhas-experiencias {
   margin-top: 5px;
   color: #C0C0C0;
-  padding: 10px; /* reduzir padding para diminuir a borda */
+  padding: 10px; 
   border-radius: 8px;
   text-align: center;
   display: flex;

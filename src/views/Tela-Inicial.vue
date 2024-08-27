@@ -96,6 +96,7 @@ export default {
   align-items: flex-start;
   text-align: left;
   padding-right: 20px;
+  margin-top: 100px; 
 }
 
 .text-container h1 {
@@ -130,7 +131,7 @@ export default {
 }
 
 a {
-  color: #C0C0C0;
+  color: #C0C0C0; 
   text-decoration: none;
   font-weight: bold;
 }
