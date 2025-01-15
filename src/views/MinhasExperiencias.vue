@@ -73,12 +73,13 @@ export default {
           empresaImagem: "ibm.png", 
           responsabilidades: [
             "Responsável pelo Security Office para concessão de acessos a sistemas via mainframe/web e sua documentação para monitoramento.",
-            "Extração de dados para elaboração de planilhas Excel.",
-            "Alteração, análise e desenvolvimento de jobs em JCL e programas em PL/I.",
-            "Realização de relatórios diários de controle interno.",
-            "Identificação e solução de vulnerabilidades em aplicação utilizando a ferramenta Contrast Security.",
-            "Criação e gerenciamento de pipelines de implantação eficientes para entrega de código em ambientes de testes e produção com Cirrus CI/CD.",
-            "Levantamento da relação de usuários ativos e seus acessos para revalidação para fins de compliance.",
+            "Desenvolvimento de um script em JavaScript para monitoramento de imagens de pipeline próximas ao vencimento, automatizando alertas e assegurando a integridade do processo.",
+            "Desenvolvimento de script em Python integrado ao Jira para monitoramento proativo de stories próximas ao arquivamento automático, automatizando a geração de relatórios para .xlsx e permitindo ações preventivas.",
+            "Levantamento e análise de usuários ativos e seus acessos, utilizando a ferramenta DBeaver com consultas SQL para revalidação periódica e conformidade com normas de compliance.",
+            "Alteração e verificação de jobs utilizando JCL (Job Control Language) e programas em PL/I para aprimorar a eficiência operacional.",
+            "Produção de relatórios diários sobre o status de ferramentas ativas para controle interno.",
+            "Identificação e resolução de vulnerabilidades em aplicações com as ferramentas Contrast Security e Node Package Manager (NPM), protegendo contra possíveis ameaças.",
+            "Criação e gerenciamento de pipelines de CI/CD em nuvem própria (IBM Cirrus), assegurando a entrega contínua de código em ambientes de teste e produção."
           ],
           showDetails: false
         },

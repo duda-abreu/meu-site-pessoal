@@ -23,16 +23,15 @@
 export default {
   data() {
     return {
-  tecnologias: [
-    { id: 1, nome: "DBeaver", imagem: "dbeaver.png", link: "https://dbeaver.io/" },
-    { id: 2, nome: "Excel", imagem: "excel.svg", link: "https://www.microsoft.com/pt-br/microsoft-365/excel" },
-    { id: 3, nome: "Git", imagem: "git.svg", link: "https://git-scm.com" },
-    { id: 4, nome: "Java", imagem: "java.svg", link: "https://www.java.com/pt-BR/" },
-    { id: 5, nome: "Python", imagem: "python.svg", link: "https://www.python.org" },
-    { id: 6, nome: "Vue.js", imagem: "vue.svg", link: "https://vuejs.org/" }
-  ]
-}
-}
+      tecnologias: [
+        { id: 1, nome: "Excel", imagem: "excel.svg", link: "https://www.microsoft.com/pt-br/microsoft-365/excel" },
+        { id: 2, nome: "Git", imagem: "git.svg", link: "https://git-scm.com" },
+        { id: 3, nome: "JavaScript", imagem: "javascript.svg", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+        { id: 4, nome: "Python", imagem: "python.svg", link: "https://www.python.org" },
+        { id: 5, nome: "SQL", imagem: "sql.svg", link: "https://www.w3schools.com/sql/" }
+      ]
+    }
+  }
 }
 </script>
 

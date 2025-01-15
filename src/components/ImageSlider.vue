@@ -22,7 +22,7 @@ export default {
     return {
       currentIndex: 0,
       images: [
-        { src: 'theboys.jpg', alt: 'The Boys', description: 'Minha série favorita é The Boys' },
+        { src: 'french.jpg', alt: 'Oui!', description: 'Eu estou aprendendo francês! Uma das minhas metas é fazer uma viagem pra Europa e não quero passar vergonha na hora de pedir um croissant :)' },
         { src: 'sza.jpg', alt: 'SZA', description: 'Minha artista favorita é a SZA (inclusive sou top 0.01% ouvinte no Spotify)' },
         { src: 'hellokitty.jpg', alt: 'Hello Kitty', description: 'Tento ser ratinha de academia nas horas vagas' },
         { src: 'itacoa.jpg', alt: 'Itacoa', description: 'Meu restaurante favorito é do vencedor do Masterchef Profissionais 2018: Rafa Gomes' },
