@@ -95,7 +95,6 @@ a:hover {
   }
 
   ul {
-    /* Mantém os itens do menu na horizontal */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center; 

@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(147, 51, 180, 0.7);
+  background: rgba(200, 180, 255, 0.85); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,23 +22,39 @@
 }
 
 .modal-content {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 12px;
+  width: 80%;
+  max-width: 800px;
   position: relative;
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 90%;
-  max-height: 90vh;
-  overflow: auto;
+  box-shadow: 
+    0 0 0 1px rgba(147, 51, 180, 0.1), 
+    0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(147, 51, 180, 0.2);
+  padding: 20px;
 }
 
 .close-btn {
   position: absolute;
-  top: -1.5rem;
-  right: -1.5rem;
-  font-size: 2.5rem;
+  top: -15px;
+  right: -15px;
+  background: #9333b4;
   color: white;
-  background: none;
   border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #7b2cbf;
+  transform: scale(1.1);
 }
 </style>

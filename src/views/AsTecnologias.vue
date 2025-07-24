@@ -2,19 +2,26 @@
   <div class="tecnologias">
     <h2>Skills</h2>
     <div class="icones-tecnologias">
-      <a 
+      <div 
         v-for="tecnologia in tecnologias" 
         :key="tecnologia.id" 
-        :href="tecnologia.link" 
-        target="_blank" 
-        :aria-label="`Learn more about ${tecnologia.nome}`"
+        class="tecnologia-item"
       >
-        <img 
-          :src="require(`@/assets/${tecnologia.imagem}`)" 
-          :alt="tecnologia.nome" 
-          class="icone-tecnologia"
+        <a 
+          :href="tecnologia.link" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          :aria-label="`Learn more about ${tecnologia.nome}`"
+          class="tecnologia-link"
         >
-      </a>
+          <img 
+            :src="require(`@/assets/${tecnologia.imagem}`)" 
+            :alt="tecnologia.nome" 
+            class="icone-tecnologia"
+          >
+          <span class="tecnologia-nome">{{ tecnologia.nome }}</span>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -54,27 +61,78 @@ export default {
   color: #C0C0C0;
   padding: 20px;
   border-radius: 8px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .tecnologias h2 {
   text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .icones-tecnologias {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.tecnologia-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.tecnologia-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .icone-tecnologia {
-  width: 44px; 
-  height: 40px;
-  margin: 0 10px; 
-  transition: transform 0.3s ease-in-out;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+  margin-bottom: 8px;
 }
 
-.icone-tecnologia:hover {
-  transform: scale(1.1); 
+.tecnologia-nome {
+  font-size: 0.85rem;
+  color: #C0C0C0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  max-width: 80px;
+  word-break: break-word;
+}
+
+.tecnologia-item:hover .icone-tecnologia {
+  transform: scale(1.1);
+}
+
+.tecnologia-item:hover .tecnologia-nome {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .tecnologia-nome {
+    opacity: 1;
+    font-size: 0.75rem;
+  }
+  
+  .icones-tecnologias {
+    gap: 15px;
+  }
+  
+  .icone-tecnologia {
+    width: 40px;
+    height: 40px;
+  }
 }
 </style>

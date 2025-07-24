@@ -1,9 +1,9 @@
 <template>
   <div class="foto-de-perfil">
-    <router-link to="/sobre" class="foto-container"> <!-- rota para a tela inicial -->
+    <a href="https://www.linkedin.com/in/mariaeduardaabreu/" target="_blank" rel="noopener noreferrer" class="foto-container">
       <img :src="fotoSrc" alt="Minha Foto" />
       <div class="borda-destaque"></div>
-    </router-link>
+    </a>
   </div>
 </template>
 
@@ -25,16 +25,21 @@ export default {
 .foto-container {
   position: relative;
   display: inline-block;
-  cursor: pointer; 
+  cursor: pointer;
+  text-decoration: none; 
 }
 
 .foto-container img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  z-index: 1; 
+  z-index: 1;
+  transition: transform 0.3s ease;
 }
 
+.foto-container:hover img {
+  transform: scale(1.05); 
+}
 
 .borda-destaque {
   position: absolute;
@@ -42,11 +47,16 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid #986798; 
+  border: 3px solid #986798;
   border-radius: 50%;
-  z-index: 0; /* borda atrás da foto */
-  box-sizing: border-box; 
-  animation: girar 3s linear infinite; 
+  z-index: 0;
+  box-sizing: border-box;
+  animation: girar 3s linear infinite;
+  transition: border-color 0.3s ease; 
+}
+
+.foto-container:hover .borda-destaque {
+  border-color: #7b2cbf; 
 }
 
 @keyframes girar {
