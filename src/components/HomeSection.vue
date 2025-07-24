@@ -27,7 +27,6 @@
       <ProfilePhoto class="profile-photo"/>
     </div>
 
-    <!-- Modal do Currículo -->
     <div v-if="mostrarCurriculo" class="modal-curriculo" @click.self="fecharCurriculo">
       <div class="modal-content">
         <button class="close-btn" @click="fecharCurriculo">&times;</button>
@@ -50,7 +49,6 @@
       </div>
     </div>
 
-    <!-- Course Modal -->
     <Modal v-if="currentModal === 'ciência-computacao'" @close="hideModal">
       <img src="@/assets/grade.jpg" alt="Grade curricular" class="course-image"/>
     </Modal>
@@ -188,7 +186,7 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(200, 180, 255, 0.85); /* Roxo claro semitransparente */
+  background: rgba(200, 180, 255, 0.85); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,16 +194,15 @@ h2 {
 }
 
 .modal-content {
-  background: rgba(255, 255, 255, 0.98); /* Branco levemente transparente */
-  padding: 25px;
+  background: rgba(255, 255, 255, 0.98);
   border-radius: 12px;
   width: 80%;
   max-width: 800px;
   position: relative;
   box-shadow: 
-    0 0 0 1px rgba(147, 51, 180, 0.1), /* Borda sutil roxa */
-    0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra suave */
-  border: 1px solid rgba(147, 51, 180, 0.2); /* Bordas roxas claras */
+    0 0 0 1px rgba(147, 51, 180, 0.1), 
+    0 10px 25px rgba(0, 0, 0, 0.05); 
+  border: 1px solid rgba(147, 51, 180, 0.2); 
 }
 
 .pdf-viewer {

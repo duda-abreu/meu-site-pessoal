@@ -3,7 +3,6 @@
     <!-- Bola fixa de gradiente no fundo -->
     <div class="background-gradient-ball"></div>
 
-    <!-- Conteúdo da sua aplicação -->
     <router-view />
   </div>
 </template>
