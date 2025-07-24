@@ -66,8 +66,8 @@ li {
 }
 
 .nav-icon {
-  width: 24px; /* Ajusta o tamanho do ícone */
-  height: 24px; /* Ajusta o tamanho do ícone */
+  width: 24px;
+  height: 24px; 
   margin-right: 8px;
 }
 
@@ -88,30 +88,30 @@ a:hover {
   text-decoration: none;
 }
 
-/* Estilos Específicos para Dispositivos Móveis */
+/* Mobile */
 @media (max-width: 768px) {
   nav {
-    padding: 10px; /* Ajusta o padding para telas menores */
+    padding: 10px; 
   }
 
   ul {
     /* Mantém os itens do menu na horizontal */
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza o menu */
+    justify-content: center; 
   }
 
   li {
-    margin: 5px; /* Ajusta o espaçamento entre itens do menu */
+    margin: 5px; 
   }
 
   .nav-icon {
-    width: 20px; /* Reduz o tamanho do ícone em dispositivos móveis */
-    height: 20px; /* Reduz o tamanho do ícone em dispositivos móveis */
+    width: 20px; 
+    height: 20px;
   }
 
   a {
-    font-size: 0.9em; /* Ajusta o tamanho da fonte em dispositivos móveis */
+    font-size: 0.9em; 
   }
 }
 </style>
