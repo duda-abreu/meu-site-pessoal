@@ -1,6 +1,6 @@
 <template>
   <div id="minhas-experiencias" class="minhas-experiencias">
-    <h2>Minhas Experiências</h2>
+    <h2>Experiência Profissional</h2>
     <ul>
       <li v-for="experiencia in experiencias" :key="experiencia.id">
         <div class="experiencia-item">
@@ -14,8 +14,8 @@
               </h3>
               <div v-if="experiencia.showDetails" class="detalhes-experiencia">
                 <div class="empresa-detalhes">
-                  <p>{{ experiencia.empresa }}</p>
-                  <p>{{ experiencia.periodo }}</p>
+                  <p><strong>{{ experiencia.empresa }}</strong></p>
+                  <p><i>{{ experiencia.periodo }}</i></p>
                 </div>
                 <ul>
                   <li v-for="responsabilidade in experiencia.responsabilidades" :key="responsabilidade">
@@ -31,7 +31,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -39,47 +38,54 @@ export default {
       experiencias: [
         {
           id: 1,
-          titulo: "Estagiária de Canais Digitais",
-          periodo: "Abril/2022 - Fevereiro/2023",
-          empresaLink: "https://www.dominos.com.br",
-          empresaImagem: "dominos.png", 
+          titulo: "Estagiária de Desenvolvimento Web",
+          periodo: "Setembro/2023 – Atual",
+          empresaLink: "https://www.ibm.com",
+          empresaImagem: "ibm.png", 
           responsabilidades: [
-            "Análise de inserções de sistemas e investigação de erros a partir de consultas a bancos SQL e logs em XML.",
-            "Elaboração de cenários e realização de testes para sanção de integração com agregadores de aplicativos.",
-            "Uso de API para verificação de raios de atendimentos e interação com Virtual Machines para realização de backups, instalações e atualizações próprias da empresa.",
-            "Construção de cadernos para homologação de projetos, tradução e adaptação de manuais de conhecimentos técnicos.",
+            "Desenvolvimento de automações com Python e JavaScript aplicadas à governança de dados, controle de acessos e segurança de aplicações.",
+            "Criação de scripts Python integrados ao Jira para monitoramento proativo de histórias próximas do arquivamento, com geração automática de relatórios em Excel.",
+            "Monitoramento de vulnerabilidades em imagens de pipeline próximas da expiração via JavaScript, com alertas automatizados por API GraphQL/REST.",
+            "Extração e análise de dados com SQL (PostgreSQL, DBeaver), Python e Excel, focando auditoria de acessos e conformidade.",
+            "Responsável pelo Security Office, gerenciando concessão e revogação de acessos em sistemas mainframe e web, incluindo revisões e auditorias periódicas.",
+            "Construção e gerenciamento de pipelines CI/CD em ambiente cloud, garantindo deploys contínuos e seguros em teste e produção.",
+            "Participação na consolidação e redução de microsserviços, com redesign de rotas, testes de endpoints e otimização da arquitetura.",
+            "Detecção e correção de vulnerabilidades em dependências via NPM Audit, SAST e DAST com Contrast Security.",
+            "Elaboração e manutenção de documentação técnica para processos críticos de governança e monitoramento.",
+            "Implementação e otimização de jobs em JCL e PL/I visando performance e escalabilidade.",
+            "Geração de relatórios diários sobre status de ferramentas e controle interno."
           ],
           showDetails: false
         },
         {
           id: 2,
-          titulo: "Estagiária de PMO",
-          periodo: "Março/2023 - Agosto/2023",
+          titulo: "Estagiária de PMO em Transformação Digital",
+          periodo: "Março/2023 – Agosto/2023",
           empresaLink: "https://www.icatuseguros.com.br",
           empresaImagem: "icatu.png", 
           responsabilidades: [
-            "Apoio na manutenção do backlog de demandas das linhas de negócio, elaboração de dashboards operacionais/executivos e monitoramento de desempenho de projetos.",
-            "Colaboração na análise do fluxo da gestão do portfólio dos setores de atividade propondo melhorias e registrando em relatórios.",
-            "Suporte na criação de diagnósticos de demandas e projetos construindo materiais de multiplicação de conhecimento para demais áreas internas.",
-            "Auxílio na criação de pipelines e de usuários em Sistema de Entrega de Projetos.",
+            "Apoio na manutenção e priorização do backlog de demandas das linhas de negócio, garantindo visibilidade aos stakeholders.",
+            "Participação na elaboração de dashboards operacionais e executivos para acompanhamento de indicadores e progresso de projetos.",
+            "Monitoramento contínuo de iniciativas, com identificação de riscos, desvios e oportunidades de melhoria.",
+            "Colaboração na análise e mapeamento de fluxos de gestão de portfólio dos setores de atividade, propondo melhorias e registrando em relatórios gerenciais.",
+            "Suporte na criação de diagnósticos de demandas e projetos, desenvolvendo materiais de capacitação para equipes internas.",
+            "Apoio na configuração de pipelines e na gestão de acessos de usuários no Sistema de Entrega de Projetos."
           ],
           showDetails: false
         },
         {
           id: 3,
-          titulo: "Estagiária de desenvolvimento",
-          periodo: "Setembro/2023 - Atual",
-          empresaLink: "https://www.ibm.com",
-          empresaImagem: "ibm.png", 
+          titulo: "Estagiária de Tecnologia em Canais Digitais",
+          periodo: "Março/2022 – Fevereiro/2023",
+          empresaLink: "https://www.dominos.com.br",
+          empresaImagem: "dominos.png", 
           responsabilidades: [
-            "Responsável pelo Security Office para concessão de acessos a sistemas via mainframe/web e sua documentação para monitoramento.",
-            "Desenvolvimento de um script em JavaScript para monitoramento de imagens de pipeline próximas ao vencimento, automatizando alertas e assegurando a integridade do processo.",
-            "Desenvolvimento de script em Python integrado ao Jira para monitoramento proativo de stories próximas ao arquivamento automático, automatizando a geração de relatórios para .xlsx e permitindo ações preventivas.",
-            "Levantamento e análise de usuários ativos e seus acessos, utilizando a ferramenta DBeaver com consultas SQL para revalidação periódica e conformidade com normas de compliance.",
-            "Alteração e verificação de jobs utilizando JCL (Job Control Language) e programas em PL/I para aprimorar a eficiência operacional.",
-            "Produção de relatórios diários sobre o status de ferramentas ativas para controle interno.",
-            "Identificação e resolução de vulnerabilidades em aplicações com as ferramentas Contrast Security e Node Package Manager (NPM), protegendo contra possíveis ameaças.",
-            "Criação e gerenciamento de pipelines de CI/CD em nuvem própria (IBM Cirrus), assegurando a entrega contínua de código em ambientes de teste e produção."
+            "Utilização da API Postman para verificação de raios de atendimento e testes de integração de sistemas com APIs RESTful.",
+            "Análise de inserções e investigação de erros via bancos SQL e logs em XML, com base em Testing e comunicação entre serviços.",
+            "Elaboração de cenários de testes para validação de integrações com agregadores de aplicativos, abrangendo a criação de cadernos de homologação de projetos.",
+            "Participação no upgrade de sistemas, incluindo backup de ambientes, instalação de quickfixes e testes pós-upgrade.",
+            "Tradução e adaptação de manuais técnicos, transformando-os em modelos padronizados.",
+            "Interação com ambientes virtuais para backups, instalações e atualizações de softwares."
           ],
           showDetails: false
         },
@@ -97,20 +103,18 @@ export default {
 
 <style scoped>
 .minhas-experiencias {
-  margin-top: 5px;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: transparent; 
   color: #C0C0C0;
-  padding: 10px; 
-  border-radius: 8px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .minhas-experiencias h2 {
-  font-size: 2.0em;
-  margin-bottom: 20px;
-  padding-left: 40px; 
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #C0C0C0; 
 }
 
 .minhas-experiencias ul {
@@ -118,101 +122,82 @@ export default {
   padding: 0;
 }
 
-.minhas-experiencias li {
-  padding-bottom: 10px;
-  position: relative; 
-}
-
 .experiencia-item {
-  display: flex; /* flexbox */
-  flex-direction: column; 
-  align-items: center; 
-  gap: 15px; /* espaçamento entre a imagem e o título */
-  position: relative; 
-  width: 100%; /* item ocupa toda a largura disponível */
-  transition: transform 0.3s ease; 
+  background-color: transparent; 
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #7B2CBF; 
+  box-shadow: 0 2px 6px rgba(123, 44, 191, 0.3); 
+  transition: transform 0.3s ease;
 }
 
 .experiencia-item:hover {
-  transform: translateX(-10px); /* move o item para a esquerda ao passar o mouse */
+  transform: scale(1.03);
 }
 
 .empresa-info {
-  display: flex; 
+  display: flex;
   align-items: center;
-  gap: 15px; 
-  width: 100%;
-  justify-content: flex-start; 
-  position: relative;
-  padding-left: 60px; 
-}
-
-.experiencia-info {
-  text-align: center; 
-  transition: max-height 0.3s ease-in-out; 
-  overflow: hidden;
-  max-height: 1000px; 
-  width: 100%; 
-}
-
-.experiencia-info h3 {
-  cursor: pointer; 
-  color: #C0C0C0; 
+  gap: 20px;
 }
 
 .empresa-link {
-  display: flex; 
+  display: flex;
   align-items: center;
-  position: absolute; 
-  left: 0;
 }
 
 .empresa-imagem {
-  width: 50px; /* tamanho da imagem para consistência */
-  height: 50px; /* altura seja igual ao tamanho */
-  object-fit: contain; /* mantém a proporção da imagem */
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
-.minhas-experiencias h3 {
-  font-size: 1.2em;
-  margin-top: 0;
-  cursor: pointer; 
-  color: #C0C0C0;
-  text-decoration: none;
-}
-
-.minhas-experiencias p {
-  margin-top: 5px;
-  margin-bottom: 5px; /* ajusta a margem inferior para diminuir o espaçamento entre as frases */
-}
-
-.minhas-experiencias ul ul {
-  margin-left: 20px;
+.experiencia-info {
+  flex: 1;
+  padding-left: 20px;
 }
 
 .cargo-titulo {
-  color: #C0C0C0; 
-  font-size: 1em; 
+  font-size: 1.5em;
+  color: #C0C0C0;
+  cursor: pointer;
 }
 
 .detalhes-experiencia {
-  display: flex;
-  justify-content: center;
-  flex-direction: column; 
-  align-items: center; 
+  padding-top: 15px;
 }
 
 .empresa-detalhes {
-  background-color: rgba(192, 192, 192, 0.7);
+  background-color: rgba(123, 44, 191, 0.3); 
+  color: #fff;
+  padding: 10px;
   border-radius: 5px;
-  padding: 5px; 
-  margin-bottom: 10px;
-  max-width: fit-content; 
+  margin-bottom: 15px;
   text-align: center;
 }
 
 .empresa-detalhes p {
-  font-size: 0.9em; 
-  margin: 4px 0; 
+  font-size: 1em;
+  margin: 5px 0;
+  font-style: normal; 
+}
+
+ul {
+  margin-top: 10px;
+}
+
+ul li {
+  padding: 5px 0;
+  font-size: 1em;
+  color: #C0C0C0;
+}
+
+@media (max-width: 768px) {
+  .empresa-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 </style>
+

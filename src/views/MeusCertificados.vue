@@ -101,12 +101,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0; /* inicialmente invisível */
+  opacity: 0; 
   transition: opacity 0.3s ease;
 }
 
 .modal.active {
-  opacity: 1; /* visível quando ativo */
+  opacity: 1; 
 }
 
 .modal img {
