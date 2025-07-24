@@ -23,7 +23,7 @@ export default {
   margin-top: 10px;
   background-color: #f0f0f0; 
   padding: 20px; 
-  border-radius: 8px; /* bordas arredondadas */
+  border-radius: 8px; 
 }
 
 .meu-nome h1 {
@@ -34,7 +34,7 @@ export default {
 .subtitulo {
   font-size: 0.7em; 
   color: #ccb1cc; 
-  margin-top: 5px; /* margem acima do subtítulo */
+  margin-top: 5px; 
   font-style: italic; 
   font-weight: 400; 
 }

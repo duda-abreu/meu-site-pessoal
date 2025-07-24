@@ -11,7 +11,7 @@
 export default {
   data() {
     return {
-      fotoSrc: require('@/assets/nova-foto.jpg') 
+      fotoSrc: require('@/assets/nova-foto2.png') 
     };
   }
 };
@@ -29,11 +29,12 @@ export default {
 }
 
 .foto-container img {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   z-index: 1; 
 }
+
 
 .borda-destaque {
   position: absolute;

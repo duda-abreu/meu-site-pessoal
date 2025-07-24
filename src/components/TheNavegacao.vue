@@ -42,14 +42,14 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent; /* Fundo transparente */
+  background-color: transparent; 
   color: #fff;
   padding: 10px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Garante que o menu fique acima de outros conteúdos */
+  z-index: 1000; 
 }
 
 ul {
