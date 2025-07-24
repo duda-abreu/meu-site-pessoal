@@ -18,8 +18,8 @@
             Oie! Sou desenvolvedora de software com experiência em algumas tecnologias que você pode conferir nas minhas 
             <a href="#skills" class="text-link">Skills</a> ou 
             <a href="#" class="text-link" @click.prevent="abrirCurriculo">
-              ver meu currículo <span class="download-icon"></span>
-            </a>!
+              ver meu currículo<span class="download-icon"></span>
+            </a>
           </p>
         </div>
       </div>
@@ -50,8 +50,8 @@
     </div>
 
     <Modal v-if="currentModal === 'ciência-computacao'" @close="hideModal">
-      <img src="@/assets/grade.jpg" alt="Grade curricular" class="course-image"/>
-    </Modal>
+  <img src="@/assets/grade.jpg" alt="Grade curricular de Ciência da Computação" class="grade-image"/>
+</Modal>
   </div>
 </template>
 
@@ -205,19 +205,16 @@ h2 {
   border: 1px solid rgba(147, 51, 180, 0.2); 
 }
 
+.grade-image {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
 .pdf-viewer {
   border: 1px solid #685858;
   margin-bottom: 15px;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
 }
 
 .download-btn {
