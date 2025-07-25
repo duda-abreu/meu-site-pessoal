@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- Bola fixa de gradiente no fundo -->
     <div class="background-gradient-ball"></div>
 
     <router-view />

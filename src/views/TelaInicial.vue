@@ -49,7 +49,7 @@ export default {
       const options = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.5, 
+        threshold: 0.3, 
       };
       const callback = (entries) => {
         entries.forEach((entry) => {
@@ -57,7 +57,11 @@ export default {
             const index = this.$refs.secoesRefs.indexOf(entry.target);
             if (index !== -1) {
               this.secoes[index].visible = true;
-              this.observer.unobserve(entry.target);
+            }
+          } else {
+            const index = this.$refs.secoesRefs.indexOf(entry.target);
+            if (index !== -1 && index !== 0) { 
+              this.secoes[index].visible = false;
             }
           }
         });
@@ -75,14 +79,39 @@ export default {
 </script>
 
 <style scoped>
+
+#skills {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+#skills .skills-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#skills .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 950px;
+  justify-items: center;
+}
+
+#tela-inicial {
+  scroll-behavior: smooth;
+}
+
 .secao {
-  min-height: 100vh;
-  padding: 60px 20px;
+  padding: 70px 20px;
   box-sizing: border-box;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(40px); 
   transition: opacity 0.8s ease, transform 0.8s ease;
-  margin-bottom: 40px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .secao.visible {
@@ -90,10 +119,43 @@ export default {
   transform: translateY(0);
 }
 
+#inicio {
+  padding-bottom: 40px;
+}
+
+#experiencias {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
 #certificados {
+  padding-top: 60px;
+  padding-bottom: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .secao {
+    padding: 40px 15px;
+  }
+  
+  #inicio {
+    padding-bottom: 30px;
+  }
+  
+  #experiencias,
+  #skills {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+  
+  #certificados {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
 }
 </style>

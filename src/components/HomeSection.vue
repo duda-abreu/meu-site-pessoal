@@ -27,6 +27,18 @@
       <ProfilePhoto class="profile-photo"/>
     </div>
 
+    <section id="experiencias" class="secao fade-in">
+      <MinhasExperiencias />
+    </section>
+
+  <section id="skills" class="secao fade-in">
+      <Tecnologias />
+    </section>
+
+  <section id="certificados" class="secao fade-in">
+      <Certificados />
+    </section>
+
     <div v-if="mostrarCurriculo" class="modal-curriculo" @click.self="fecharCurriculo">
       <div class="modal-content">
         <button class="close-btn" @click="fecharCurriculo">&times;</button>
@@ -50,8 +62,8 @@
     </div>
 
     <Modal v-if="currentModal === 'ciência-computacao'" @close="hideModal">
-  <img src="@/assets/grade.jpg" alt="Grade curricular de Ciência da Computação" class="grade-image"/>
-</Modal>
+      <img src="@/assets/grade.jpg" alt="Grade curricular de Ciência da Computação" class="grade-image"/>
+    </Modal>
   </div>
 </template>
 
@@ -84,7 +96,27 @@ export default {
     },
     fecharCurriculo() {
       this.mostrarCurriculo = false
+    },
+    handleScroll() {
+      const sections = document.querySelectorAll('.fade-in');
+      const windowHeight = window.innerHeight;
+      const triggerOffset = windowHeight / 1.5; 
+      
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerOffset) {
+          section.classList.add('visible');
+        }
+      });
     }
+  },
+
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll(); 
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 </script>
@@ -105,6 +137,45 @@ export default {
   align-items: center;
   min-height: 80vh;
   gap: 2rem;
+  margin-bottom: 10px; 
+}
+
+.intro-section,
+.secao {
+  padding: 30px 0; 
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#experiencias {
+  padding-bottom: 15px;
+}
+
+#skills {
+  padding-top: 15px;   
+  padding-bottom: 15px; 
+}
+
+#certificados {
+  padding-top: 15px;   
+  padding-bottom: 40px; 
+}
+
+.secao.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .text-content {
@@ -116,13 +187,13 @@ export default {
 h1 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: #C0C0C0;
 }
 
 h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: #C0C0C0;
+  color: #ffffff;
 }
 
 .graduation-text {
@@ -138,17 +209,58 @@ h2 {
   color: #C0C0C0;
 }
 
-.text-link {
+.text-link,
+.graduation-text a,
+.bio-text a {
   color: #C0C0C0;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
   cursor: pointer;
+  display: inline-block; 
+  transition: all 0.3s ease;
+  transform-origin: center; 
 }
 
-.text-link:hover {
+.text-link:hover,
+.graduation-text a:hover,
+.bio-text a:hover {
   color: #ffffff;
-  text-decoration: underline;
+  transform: scale(1.02); 
+}
+
+.text-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease;
+  transform: scale(1.1);
+}
+
+.text-link:hover::after {
+  width: 100%;
+  transform: scale(1.1);
+}
+
+.download-btn,
+.close-btn {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.download-btn:hover {
+  background: #7b2cbf;
+  transform: scale(1.05); 
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1); 
+}
+
+.graduation-text a:hover {
+  border-bottom-color: transparent;
 }
 
 .download-icon {
@@ -178,7 +290,6 @@ h2 {
   border: 2px solid #fff;
   box-shadow: 0 0 1.25rem rgba(0,0,0,0.5);
 }
-
 
 .modal-curriculo {
   position: fixed;
@@ -231,17 +342,10 @@ h2 {
   border: 2px solid #7b2cbf; 
 }
 
-
-.download-btn:hover {
-  background: #7b2cbf; 
-  transform: translateY(-2px);
-}
-
 .download-link {
   color: #9333b4; 
   font-weight: bold;
 }
-
 
 .close-btn {
   position: absolute;
@@ -269,27 +373,13 @@ h2 {
 
 /* Ajustes para mobile */
 @media (max-width: 768px) {
-  .modal-content {
-    width: 90%;
-    padding: 15px;
-  }
-  
-  .pdf-viewer {
-    height: 60vh;
-  }
-  
-  .download-btn {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 768px) {
   .home-container {
     padding: 1.25rem;
   }
-  
+
   .intro-section {
     flex-direction: column;
+    margin-bottom: 30px;
   }
   
   .text-content {
@@ -302,6 +392,17 @@ h2 {
     width: 18rem;
     height: 18rem;
     margin-bottom: 2rem;
+  }
+
+  .secao {
+    padding: 30px 0;
+  }
+  
+  #experiencias,
+  #skills,
+  #certificados {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   
   .graduation-text,
@@ -317,5 +418,6 @@ h2 {
   .pdf-viewer {
     height: 400px;
   }
+  
 }
 </style>
