@@ -297,23 +297,37 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(200, 180, 255, 0.85); 
+  background: transparent; 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  pointer-events: none; 
 }
 
 .modal-content {
-  background: rgba(255, 255, 255, 0.98);
+  background: transparent; 
   border-radius: 12px;
   width: 80%;
   max-width: 800px;
   position: relative;
-  box-shadow: 
-    0 0 0 1px rgba(147, 51, 180, 0.1), 
-    0 10px 25px rgba(0, 0, 0, 0.05); 
-  border: 1px solid rgba(147, 51, 180, 0.2); 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+  pointer-events: auto; 
+}
+
+
+
+.pdf-viewer {
+  border: 1px solid #685858;
+  margin-bottom: 15px;
+}
+
+.modal-grade {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .grade-image {
@@ -323,9 +337,13 @@ h2 {
   object-fit: contain;
 }
 
-.pdf-viewer {
-  border: 1px solid #685858;
-  margin-bottom: 15px;
+.modal-grade-container {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .download-btn {
