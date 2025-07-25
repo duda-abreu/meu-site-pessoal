@@ -44,9 +44,9 @@ export default {
         { id: 11, nome: "HTML5", imagem: "html.svg", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
         { id: 12, nome: "CSS3", imagem: "css.svg", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
         { id: 13, nome: "GraphQL", imagem: "graphql.svg", link: "https://graphql.org/" },
-        { id: 15, nome: "Postman", imagem: "postman.svg", link: "https://www.postman.com/" },
-        { id: 16, nome: "Swagger", imagem: "swagger.svg", link: "https://swagger.io/" },
-        { id: 14, nome: "Excel", imagem: "excel.svg", link: "https://www.microsoft.com/pt-br/microsoft-365/excel" },
+        { id: 14, nome: "Postman", imagem: "postman.svg", link: "https://www.postman.com/" },
+        { id: 15, nome: "Swagger", imagem: "swagger.svg", link: "https://swagger.io/" },
+//      { id: 16, nome: "Excel", imagem: "excel.svg", link: "https://www.microsoft.com/pt-br/microsoft-365/excel" },
 
       ]
     }

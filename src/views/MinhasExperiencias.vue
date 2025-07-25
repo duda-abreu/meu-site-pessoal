@@ -114,7 +114,7 @@ export default {
   font-size: 2.5em;
   margin-bottom: 30px;
   text-align: center;
-  color: #C0C0C0; 
+  color: #ffffff; 
 }
 
 .minhas-experiencias ul {

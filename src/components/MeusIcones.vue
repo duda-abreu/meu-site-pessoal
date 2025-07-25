@@ -46,4 +46,5 @@ export default {
 .icon:hover {
   opacity: 0.9;
 }
+
 </style>
