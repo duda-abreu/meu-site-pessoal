@@ -38,6 +38,7 @@ export default {
         { id: 5, nome: "React", imagem: "react.svg", link: "https://reactjs.org/" },
         { id: 6, nome: "SQL", imagem: "sql.svg", link: "https://en.wikipedia.org/wiki/SQL" },
         { id: 7, nome: "Cloud", imagem: "cloud.svg", link: "https://aws.amazon.com/what-is-cloud-computing/" },
+        { id: 8, nome: "Docker", imagem: "docker.svg", link: "https://www.docker.com/" },
         { id: 10, nome: "Git/GitHub", imagem: "git.svg", link: "https://git-scm.com/" },
         { id: 11, nome: "HTML5", imagem: "html.svg", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
         { id: 12, nome: "CSS3", imagem: "css.svg", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
