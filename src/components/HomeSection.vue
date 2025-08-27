@@ -43,19 +43,19 @@
       <div class="modal-content">
         <button class="close-btn" @click="fecharCurriculo">&times;</button>
         <object
-          data="/curriculo.pdf#toolbar=0&navpanes=0"
+          data="/CV - Maria Eduarda Abreu.pdf#toolbar=0&navpanes=0"
           type="application/pdf"
           width="100%"
           height="500px"
           class="pdf-viewer"
         >
           <p>Seu navegador não suporta visualização de PDF. 
-            <a href="/curriculo.pdf" download class="download-link">
+            <a href="/CV - Maria Eduarda Abreu.pdf" download class="download-link">
               Clique para baixar
             </a>
           </p>
         </object>
-        <a href="/curriculo.pdf" download class="download-btn">
+        <a href="/CV - Maria Eduarda Abreupdf" download class="download-btn">
           Baixar Currículo ⬇️
         </a>
       </div>

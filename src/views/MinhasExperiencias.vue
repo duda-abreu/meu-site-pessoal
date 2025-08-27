@@ -43,34 +43,30 @@ export default {
           empresaLink: "https://www.ibm.com",
           empresaImagem: "ibm.png", 
           responsabilidades: [
-            "Desenvolvimento de automações com Python e JavaScript aplicadas à governança de dados, controle de acessos e segurança de aplicações.",
-            "Criação de scripts Python integrados ao Jira para monitoramento proativo de histórias próximas do arquivamento, com geração automática de relatórios em Excel.",
-            "Monitoramento de vulnerabilidades em imagens de pipeline próximas da expiração via JavaScript, com alertas automatizados por API GraphQL/REST.",
-            "Extração e análise de dados com SQL (PostgreSQL, DBeaver), Python e Excel, focando auditoria de acessos e conformidade.",
-            "Responsável pelo Security Office, gerenciando concessão e revogação de acessos em sistemas mainframe e web, incluindo revisões e auditorias periódicas.",
-            "Construção e gerenciamento de pipelines CI/CD em ambiente cloud, garantindo deploys contínuos e seguros em teste e produção.",
-            "Participação na consolidação e redução de microsserviços, com redesign de rotas, testes de endpoints e otimização da arquitetura.",
-            "Detecção e correção de vulnerabilidades em dependências via NPM Audit, SAST e DAST com Contrast Security.",
-            "Elaboração e manutenção de documentação técnica para processos críticos de governança e monitoramento.",
-            "Implementação e otimização de jobs em JCL e PL/I visando performance e escalabilidade.",
-            "Geração de relatórios diários sobre status de ferramentas e controle interno."
-          ],
+            "Desenvolvimento de automações em Python e JavaScript para governança de dados, controle de acessos e segurança de aplicações em IBM Cloud e ambientes mainframe, otimizando fluxos de trabalho internos.",
+            "Criação de scripts Python integrados ao Jira, utilizando a biblioteca Pandas para tratamento, cruzamento e consolidação periódica de dados, gerando relatórios em Excel para apoio a processos internos de verificação e controle.",
+            "Identificação e correção de vulnerabilidades utilizando ferramentas SAST, DAST, Contrast Security e auditoria de dependências JavaScript, assegurando compliance.",
+            "Desenvolvimento de scripts JavaScript para monitoramento proativo de vulnerabilidades em pipelines de repositórios Git, comintegração a GraphQL, REST APIs, sistemas de alertas e envio automático de e-mails via NodeMailer.",
+            "Realização de consultas SQL na plataforma DBeaver (IBM Db2 em z/OS), com foco em extração estruturada de dados, análise de acessos privilegiados e suporte a processos regulatórios.",
+            "Atuação na consolidação e refatoração de microsserviços, incluindo redesign de rotas, testes de integração via API Echo e aprimoramento da arquitetura RESTful",
+            "Manutenção e gerenciamento de pipelines CI/CD em nuvem, empregando GitHub Actions e scripts customizados para entregas automatizadas, seguras e auditáveis em ambientes de teste e produção",
+            "Responsável pelo Security Office, gerenciando concessão e revogação de acessos em sistemas mainframe e web, realizando revisões periódicas e garantindo rastreabilidade.",
+            "Produção de documentação técnica para auditorias internas e externas, detalhando fluxos de controle de acesso, monitoramento de atividades críticas e cumprimento de normas de segurança."          ],
           showDetails: false
         },
         {
           id: 2,
-          titulo: "Estagiária de PMO em Transformação Digital",
+          titulo: "Estagiária de Engenharia de Dados em Transformação Digital",
           periodo: "Março/2023 – Agosto/2023",
           empresaLink: "https://www.icatuseguros.com.br",
           empresaImagem: "icatu.png", 
           responsabilidades: [
-            "Apoio na manutenção e priorização do backlog de demandas das linhas de negócio, garantindo visibilidade aos stakeholders.",
-            "Participação na elaboração de dashboards operacionais e executivos para acompanhamento de indicadores e progresso de projetos.",
-            "Monitoramento contínuo de iniciativas, com identificação de riscos, desvios e oportunidades de melhoria.",
-            "Colaboração na análise e mapeamento de fluxos de gestão de portfólio dos setores de atividade, propondo melhorias e registrando em relatórios gerenciais.",
-            "Suporte na criação de diagnósticos de demandas e projetos, desenvolvendo materiais de capacitação para equipes internas.",
-            "Apoio na configuração de pipelines e na gestão de acessos de usuários no Sistema de Entrega de Projetos."
-          ],
+            "Atuação com o time de Growth na construção e manutenção de pipelines de ingestão e transformação de dados utilizando Azure Data Factory, Databricks e Python, aplicando boas práticas de ETL para garantir eficiência e qualidade.",
+            "Projeto e implementação de pipelines para ingestão de dados de múltiplas fontes: bancos relacionais, APIs REST e arquivos nos formatos CSV e JSON.",
+            "Configuração e gerenciamento de ambientes na nuvem Azure, assegurando disponibilidade e confiabilidade das bases de dados para suporte à tomada de decisão.",
+            "Criação, suporte e manutenção contínua de scripts e notebooks para automação e monitoramento dos pipelines.",
+            "Apoio na manutenção e priorização do backlog de demandas das linhas de negócio, garantindo alinhamento estratégico e comunicação ativa com stakeholders para entendimento de novos produtos e iniciativas, apoiando na análise de impacto e adaptação de processos de ingestão e reporting.",
+            "Participação na construção de dashboards operacionais com visualização de dados em Power BI, acompanhando indicadores, análise de riscos e mapeamento de fluxos de projetos."],
           showDetails: false
         },
         {
@@ -80,11 +76,11 @@ export default {
           empresaLink: "https://www.dominos.com.br",
           empresaImagem: "dominos.png", 
           responsabilidades: [
-            "Utilização da API Postman para verificação de raios de atendimento e testes de integração de sistemas com APIs RESTful.",
+            "Utilização da ferramenta Postman para verificação de raios de atendimento e execução de testes de integração de sistemas, envolvendo interação com APIs RESTful, análise de inserções e investigação de erros via bancos de dados SQL e logs em XML, com base em princípios de Testing.",
             "Análise de inserções e investigação de erros via bancos SQL e logs em XML, com base em Testing e comunicação entre serviços.",
-            "Elaboração de cenários de testes para validação de integrações com agregadores de aplicativos, abrangendo a criação de cadernos de homologação de projetos.",
-            "Participação no upgrade de sistemas, incluindo backup de ambientes, instalação de quickfixes e testes pós-upgrade.",
-            "Tradução e adaptação de manuais técnicos, transformando-os em modelos padronizados.",
+            "Elaboração e execução de mais de 220 cenários de testes para validação de integrações com agregadores de aplicativos, documentados em cadernos de homologação, garantindo a qualidade das entregas.",
+            "Participação ativa no processo de upgrade dos sistemas da empresa, incluindo backup de ambientes virtuais, preparação e aplicação de quickfixes, alteração de parâmetros em SQL Server e realização de testes pós-upgrade para validação das atualizações.",
+            "Tradução e adaptação de manuais técnicos de Virtual Machines (PT → EN), convertendo-os em modelos padronizados para uso interno, além de atuação em ambientes virtuais para backups, instalações e atualizações de softwares.",
             "Interação com ambientes virtuais para backups, instalações e atualizações de softwares."
           ],
           showDetails: false
