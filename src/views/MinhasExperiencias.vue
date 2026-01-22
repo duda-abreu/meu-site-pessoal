@@ -39,7 +39,7 @@ export default {
         {
           id: 1,
           titulo: "Estagiária de Desenvolvimento Web",
-          periodo: "Setembro/2023 – Atual",
+          periodo: "Novembro/2023 – Novembro/2025",
           empresaLink: "https://www.ibm.com",
           empresaImagem: "ibm.png", 
           responsabilidades: [
@@ -60,7 +60,7 @@ export default {
         {
           id: 2,
           titulo: "Estagiária de PMO em Transformação Digital",
-          periodo: "Março/2023 – Agosto/2023",
+          periodo: "Março/2023 – Outubro/2023",
           empresaLink: "https://www.icatuseguros.com.br",
           empresaImagem: "icatu.png", 
           responsabilidades: [
