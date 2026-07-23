@@ -1,11 +1,8 @@
 module.exports = {
-  // Configuração correta:
-  transpileDependencies: [], // Array vazio ou com os pacotes que precisam ser transpilados
+  transpileDependencies: [], 
   
-  // Exemplo se precisar transpilar pacotes específicos:
-  // transpileDependencies: ['vue-awesome', 'vuex-persistedstate'],
+  parallel: false,
   
   chainWebpack: config => {
-    // Suas outras configurações webpack (se houver)
   }
 }
