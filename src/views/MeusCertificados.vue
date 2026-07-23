@@ -108,14 +108,14 @@ export default {
 .certificado-item {
   margin: 15px 0;
   padding: 15px;
-  background: rgba(123, 44, 191, 0.1);
+  background: rgba(59, 58, 59, 0.1);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .certificado-item:hover {
-  background: rgba(123, 44, 191, 0.2);
-  border-left-color: #7b2cbf; 
+  background: rgba(74, 73, 75, 0.2);
+  border-left-color: #6e6b70; 
 }
 
 .modal-certificado {
@@ -124,7 +124,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(200, 180, 255, 0.85);
+  background: rgba(171, 168, 177, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,7 +170,7 @@ export default {
 }
 
 .fechar-modal:hover {
-  background: #7b2cbf;
+  background: #414042;
   transform: scale(1.1);
 }
 

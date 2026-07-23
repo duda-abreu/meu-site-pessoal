@@ -47,7 +47,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid #986798;
+  border: 3px solid #e4e4e4;
   border-radius: 50%;
   z-index: 0;
   box-sizing: border-box;
@@ -56,7 +56,7 @@ export default {
 }
 
 .foto-container:hover .borda-destaque {
-  border-color: #7b2cbf; 
+  border-color: #5a565e; 
 }
 
 @keyframes girar {

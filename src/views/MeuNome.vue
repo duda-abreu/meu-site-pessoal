@@ -19,23 +19,25 @@ export default {
 
 <style scoped>
 .meu-nome {
-  text-align: center;
-  margin-top: 10px;
-  background-color: #f0f0f0; 
-  padding: 20px; 
-  border-radius: 8px; 
+  text-align: left;
+  margin-top: 20px;
+  background-color: transparent;
+  padding: 0;
 }
 
 .meu-nome h1 {
-  color: #ccb1cc; 
-  font-size: 2em; 
+  color: #ffffff; 
+  font-size: 2.8rem; 
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 8px;
 }
 
 .subtitulo {
-  font-size: 0.7em; 
-  color: #ccb1cc; 
-  margin-top: 5px; 
-  font-style: italic; 
+  font-size: 1rem; 
+  color: #a0a0a0;
+  font-style: normal; 
   font-weight: 400; 
 }
 </style>
