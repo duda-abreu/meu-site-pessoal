@@ -36,60 +36,8 @@ export default {
   data() {
     return {
       experiencias: [
-        {
-          id: 1,
-          titulo: "Estagiária de Desenvolvimento Web",
-          periodo: "Novembro/2023 – Novembro/2025",
-          empresaLink: "https://www.ibm.com",
-          empresaImagem: "ibm.png", 
-          responsabilidades: [
-            "Desenvolvimento de automações com Python e JavaScript aplicadas à governança de dados, controle de acessos e segurança de aplicações.",
-            "Criação de scripts Python integrados ao Jira para monitoramento proativo de histórias próximas do arquivamento, com geração automática de relatórios em Excel.",
-            "Monitoramento de vulnerabilidades em imagens de pipeline próximas da expiração via JavaScript, com alertas automatizados por API GraphQL/REST.",
-            "Extração e análise de dados com SQL (PostgreSQL, DBeaver), Python e Excel, focando auditoria de acessos e conformidade.",
-            "Responsável pelo Security Office, gerenciando concessão e revogação de acessos em sistemas mainframe e web, incluindo revisões e auditorias periódicas.",
-            "Construção e gerenciamento de pipelines CI/CD em ambiente cloud, garantindo deploys contínuos e seguros em teste e produção.",
-            "Participação na consolidação e redução de microsserviços, com redesign de rotas, testes de endpoints e otimização da arquitetura.",
-            "Detecção e correção de vulnerabilidades em dependências via NPM Audit, SAST e DAST com Contrast Security.",
-            "Elaboração e manutenção de documentação técnica para processos críticos de governança e monitoramento.",
-            "Implementação e otimização de jobs em JCL e PL/I visando performance e escalabilidade.",
-            "Geração de relatórios diários sobre status de ferramentas e controle interno."
-          ],
-          showDetails: false
-        },
-        {
-          id: 2,
-          titulo: "Estagiária de PMO em Transformação Digital",
-          periodo: "Março/2023 – Outubro/2023",
-          empresaLink: "https://www.icatuseguros.com.br",
-          empresaImagem: "icatu.png", 
-          responsabilidades: [
-            "Apoio na manutenção e priorização do backlog de demandas das linhas de negócio, garantindo visibilidade aos stakeholders.",
-            "Participação na elaboração de dashboards operacionais e executivos para acompanhamento de indicadores e progresso de projetos.",
-            "Monitoramento contínuo de iniciativas, com identificação de riscos, desvios e oportunidades de melhoria.",
-            "Colaboração na análise e mapeamento de fluxos de gestão de portfólio dos setores de atividade, propondo melhorias e registrando em relatórios gerenciais.",
-            "Suporte na criação de diagnósticos de demandas e projetos, desenvolvendo materiais de capacitação para equipes internas.",
-            "Apoio na configuração de pipelines e na gestão de acessos de usuários no Sistema de Entrega de Projetos."
-          ],
-          showDetails: false
-        },
-        {
-          id: 3,
-          titulo: "Estagiária de Tecnologia em Canais Digitais",
-          periodo: "Março/2022 – Fevereiro/2023",
-          empresaLink: "https://www.dominos.com.br",
-          empresaImagem: "dominos.png", 
-          responsabilidades: [
-            "Utilização da API Postman para verificação de raios de atendimento e testes de integração de sistemas com APIs RESTful.",
-            "Análise de inserções e investigação de erros via bancos SQL e logs em XML, com base em Testing e comunicação entre serviços.",
-            "Elaboração de cenários de testes para validação de integrações com agregadores de aplicativos, abrangendo a criação de cadernos de homologação de projetos.",
-            "Participação no upgrade de sistemas, incluindo backup de ambientes, instalação de quickfixes e testes pós-upgrade.",
-            "Tradução e adaptação de manuais técnicos, transformando-os em modelos padronizados.",
-            "Interação com ambientes virtuais para backups, instalações e atualizações de softwares."
-          ],
-          showDetails: false
-        },
-      ],
+        
+      
   {
     id: 1,
     titulo: "Consultora de TI JR",
