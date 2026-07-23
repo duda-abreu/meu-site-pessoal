@@ -2,23 +2,30 @@
   <div class="home-container">
     <div class="intro-section">
       <div class="text-content">
-        <h1>Eu sou a Maria Eduarda Abreu,</h1>
-        <h2>mas pode me chamar de Duda 😊</h2>
+        <h2 class="typewriter-title" @mouseenter="embaralharTexto">
+          <span class="typewriter-text">{{ textoDigitado }}</span><span class="blinking-cursor">_</span>
+        </h2>
         
         <p class="graduation-text">
-          Graduanda em 
-          <a @click.prevent="showModal('ciência-computacao')" class="text-link">Ciência da Computação</a> pela 
-          <a href="https://www.uerj.br" target="_blank" rel="noopener" class="text-link">Universidade do Estado do Rio de Janeiro</a>
+          Desenvolvedora de Software na
+          <a
+            href="https://www.seidor.com/pt-br"
+            target="_blank"
+            rel="noopener"
+            class="text-link"
+          >
+            SEIDOR
+          </a>
         </p>
 
         <SocialIcons class="social-icons"/>
         
         <div class="bio-text">
           <p>
-            Oie! Sou desenvolvedora de software com experiência em algumas tecnologias que você pode conferir nas minhas 
-            <a href="#skills" class="text-link">Skills</a> ou 
+            Oie! Aqui você pode conhecer um pouco da minha trajetória, explorar as minhas
+            <router-link to="/skills" class="text-link">Skills</router-link> e conferir meu
             <a href="#" class="text-link" @click.prevent="abrirCurriculo">
-              ver meu currículo<span class="download-icon"></span>
+              currículo<span class="download-icon"></span>
             </a>
           </p>
         </div>
@@ -31,11 +38,11 @@
       <MinhasExperiencias />
     </section>
 
-  <section id="skills" class="secao fade-in">
+    <section id="skills" class="secao fade-in">
       <Tecnologias />
     </section>
 
-  <section id="certificados" class="secao fade-in">
+    <section id="certificados" class="secao fade-in">
       <Certificados />
     </section>
 
@@ -43,19 +50,19 @@
       <div class="modal-content">
         <button class="close-btn" @click="fecharCurriculo">&times;</button>
         <object
-          data="/curriculo.pdf#toolbar=0&navpanes=0"
+          data="/CV - Maria Eduarda Abreu.pdf#toolbar=0&navpanes=0"
           type="application/pdf"
           width="100%"
           height="500px"
           class="pdf-viewer"
         >
           <p>Seu navegador não suporta visualização de PDF. 
-            <a href="/curriculo.pdf" download class="download-link">
+            <a href="/CV - Maria Eduarda Abreu.pdf" download class="download-link">
               Clique para baixar
             </a>
           </p>
         </object>
-        <a href="/curriculo.pdf" download class="download-btn">
+        <a href="/CV - Maria Eduarda Abreu.pdf" download class="download-btn">
           Baixar Currículo ⬇️
         </a>
       </div>
@@ -81,7 +88,11 @@ export default {
   data() {
     return {
       currentModal: null,
-      mostrarCurriculo: false
+      mostrarCurriculo: false,
+      textoCompleto: "Duda Abreu",
+      textoDigitado: "",
+      indexDigitacao: 0,
+      animandoEmbaralhar: false
     }
   },
   methods: {
@@ -96,6 +107,38 @@ export default {
     },
     fecharCurriculo() {
       this.mostrarCurriculo = false
+    },
+    digitarTexto() {
+      if (this.indexDigitacao < this.textoCompleto.length) {
+        this.textoDigitado += this.textoCompleto.charAt(this.indexDigitacao);
+        this.indexDigitacao++;
+        setTimeout(this.digitarTexto, 120);
+      }
+    },
+    embaralharTexto() {
+      if (this.animandoEmbaralhar || this.textoDigitado.length < this.textoCompleto.length) return;
+      
+      this.animandoEmbaralhar = true;
+      const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+      let iteracao = 0;
+      
+      const interval = setInterval(() => {
+        this.textoDigitado = this.textoCompleto
+          .split("")
+          .map((char, idx) => {
+            if (char === " ") return " ";
+            if (idx < iteracao) return this.textoCompleto[idx];
+            return caracteres[Math.floor(Math.random() * caracteres.length)];
+          })
+          .join("");
+
+        if (iteracao >= this.textoCompleto.length) {
+          clearInterval(interval);
+          this.animandoEmbaralhar = false;
+        }
+
+        iteracao += 1 / 3;
+      }, 30);
     },
     handleScroll() {
       const sections = document.querySelectorAll('.fade-in');
@@ -112,6 +155,7 @@ export default {
   },
 
   mounted() {
+    this.digitarTexto();
     window.addEventListener('scroll', this.handleScroll);
     this.handleScroll(); 
   },
@@ -164,12 +208,12 @@ export default {
 }
 
 #skills {
-  padding-top: 15px;   
+  padding-top: 15px;    
   padding-bottom: 15px; 
 }
 
 #certificados {
-  padding-top: 15px;   
+  padding-top: 15px;    
   padding-bottom: 40px; 
 }
 
@@ -181,7 +225,7 @@ export default {
 .text-content {
   flex: 1;
   max-width: 55%;
-  text-align: center;
+  text-align: left;
 }
 
 h1 {
@@ -190,10 +234,27 @@ h1 {
   color: #C0C0C0;
 }
 
-h2 {
-  font-size: 1.8rem;
+.typewriter-title {
+  font-size: 2.8rem;
   margin-bottom: 1rem;
   color: #ffffff;
+  font-weight: 700;
+  display: inline-block;
+  cursor: pointer; 
+  user-select: none;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: bold;
+  animation: piscar 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .graduation-text {
@@ -251,7 +312,7 @@ h2 {
 }
 
 .download-btn:hover {
-  background: #7b2cbf;
+  background: #a3a3a3;
   transform: scale(1.05); 
 }
 
@@ -270,6 +331,10 @@ h2 {
 
 .social-icons {
   margin: 1.5rem 0;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  width: 100%;
 }
 
 .profile-photo {
@@ -281,7 +346,7 @@ h2 {
   height: 28rem;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 1.5rem rgba(147, 51, 180, 0.7);
+  box-shadow: 0 0 1.5rem rgba(240, 240, 240, 0.7);
 }
 
 .course-image {
@@ -316,10 +381,8 @@ h2 {
   pointer-events: auto; 
 }
 
-
-
 .pdf-viewer {
-  border: 1px solid #685858;
+  border: 1px solid #6d6b6b;
   margin-bottom: 15px;
 }
 
@@ -348,7 +411,7 @@ h2 {
 
 .download-btn {
   display: block;
-  background: #9333b4; 
+  background: #585558; 
   color: white;
   text-align: center;
   padding: 12px;
@@ -357,11 +420,11 @@ h2 {
   font-weight: bold;
   margin-top: 15px;
   transition: all 0.3s ease;
-  border: 2px solid #7b2cbf; 
+  border: 2px solid #0d0d0e; 
 }
 
 .download-link {
-  color: #9333b4; 
+  color: #0c0c0c; 
   font-weight: bold;
 }
 
@@ -369,7 +432,7 @@ h2 {
   position: absolute;
   top: -15px;
   right: -15px;
-  background: #9333b4; 
+  background: #ffffff; 
   color: white;
   border: none;
   width: 40px;
@@ -385,7 +448,7 @@ h2 {
 }
 
 .close-btn:hover {
-  background: #7b2cbf; 
+  background: #2c2c2c; 
   transform: scale(1.1);
 }
 
@@ -404,6 +467,7 @@ h2 {
     max-width: 100%;
     margin-bottom: 2rem;
     order: 2;
+    text-align: center;
   }
   
   .profile-photo img {
@@ -436,6 +500,5 @@ h2 {
   .pdf-viewer {
     height: 400px;
   }
-  
 }
 </style>

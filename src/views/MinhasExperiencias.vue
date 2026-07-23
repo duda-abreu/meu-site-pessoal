@@ -1,23 +1,23 @@
 <template>
   <div id="minhas-experiencias" class="minhas-experiencias">
     <h2>Experiência Profissional</h2>
-    <ul>
+    <ul class="lista-experiencias">
       <li v-for="experiencia in experiencias" :key="experiencia.id">
         <div class="experiencia-item">
-          <div class="empresa-info">
+          <div class="empresa-container">
             <a :href="experiencia.empresaLink" target="_blank" class="empresa-link">
               <img :src="require(`@/assets/${experiencia.empresaImagem}`)" :alt="experiencia.empresa" class="empresa-imagem">
             </a>
-            <div class="experiencia-info">
+            <div class="conteudo-info">
               <h3 @click="toggleDetails(experiencia.id)" class="cargo-titulo">
                 {{ experiencia.titulo }}
               </h3>
               <div v-if="experiencia.showDetails" class="detalhes-experiencia">
                 <div class="empresa-detalhes">
-                  <p><strong>{{ experiencia.empresa }}</strong></p>
-                  <p><i>{{ experiencia.periodo }}</i></p>
+                  <p class="nome-empresa">{{ experiencia.empresa }}</p>
+                  <p class="periodo-texto">{{ experiencia.periodo }}</p>
                 </div>
-                <ul>
+                <ul class="lista-responsabilidades">
                   <li v-for="responsabilidade in experiencia.responsabilidades" :key="responsabilidade">
                     {{ responsabilidade }}
                   </li>
@@ -90,12 +90,80 @@ export default {
           showDetails: false
         },
       ],
+  {
+    id: 1,
+    titulo: "Consultora de TI JR",
+    empresa: "SEIDOR",
+    periodo: "Março/2026 – Atual",
+    empresaLink: "https://www.seidor.com/pt-br",
+    empresaImagem: "seidor.png",
+    responsabilidades: [
+      "Atuação em projetos de implementação de soluções corporativas SAP, elaboração de especificações funcionais/técnicas e integração entre aplicações.",
+      "Análise, modelagem e validação de dados: identificação de rotinas e mapeamento das tabelas para garantir a consistência e eficiência do fluxo de informação.",
+      "Investigação de redundâncias e proposição de melhorias estruturais nos modelos de dados para otimizar o processamento e a governança.",
+      "Conexão entre regras de negócio, modelagem e qualidade de software para garantir entregas eficientes e aderentes às demandas dos clientes."
+    ],
+    showDetails: false
+  },
+  {
+    id: 2,
+    titulo: "Estagiária de Desenvolvimento Web",
+    empresa: "IBM",
+    periodo: "Novembro/2023 – Novembro/2025",
+    empresaLink: "https://www.ibm.com",
+    empresaImagem: "ibm.png",
+    responsabilidades: [
+      "Desenvolvimento de automações em Python e JavaScript para governança de dados, controle de acessos e segurança de aplicações em IBM Cloud e Mainframe.",
+      "Criação de scripts Python integrados ao Jira com biblioteca Pandas para tratamento, cruzamento e consolidação de dados com geração de relatórios gerenciais.",
+      "Identificação e correção de vulnerabilidades via ferramentas SAST/DAST, Contrast Security e auditoria de dependências JavaScript.",
+      "Desenvolvimento de scripts em Node.js/JavaScript para monitoramento proativo de vulnerabilidades em pipelines Git com integração a GraphQL, REST APIs e alertas automatizados.",
+      "Análise de acessos privilegiados e suporte a processos regulatórios por meio de consultas SQL estruturadas no DBeaver (IBM Db2 em z/OS) e extração de dados.",
+      "Consolidação e refatoração de microsserviços, incluindo redesign de rotas, testes de integração via API Echo e manutenção de pipelines CI/CD com GitHub Actions.",
+      "Gestão do Security Office: administração de acessos em Mainframe/Web, revisões periódicas e produção de documentação técnica para auditorias internas e externas."
+    ],
+    showDetails: false
+  },
+  {
+    id: 3,
+    titulo: "Estagiária de Engenharia de Dados em Transformação Digital",
+    empresa: "Icatu Seguros",
+    periodo: "Março/2023 – Outubro/2023",
+    empresaLink: "https://www.icatuseguros.com.br",
+    empresaImagem: "icatu.png",
+    responsabilidades: [
+      "Construção e manutenção de pipelines de ingestão e transformação de dados (ETL) utilizando Azure Data Factory, Databricks e Python.",
+      "Ingestão e integração de múltiplas fontes de dados, incluindo bancos relacionais, APIs REST e arquivos nos formatos CSV e JSON.",
+      "Elaboração e manutenção de dashboards operacionais e executivos em Power BI e Excel para acompanhamento de KPIs e indicadores de projetos.",
+      "Configuração e gerenciamento de ambientes na nuvem Azure, garantindo disponibilidade, confiabilidade das bases e suporte à governança.",
+      "Apoio no alinhamento estratégico com stakeholders, priorização de backlog das linhas de negócio e mapeamento de riscos/fluxos operacionais."
+    ],
+    showDetails: false
+  },
+  {
+    id: 4,
+    titulo: "Estagiária de Tecnologia em Canais Digitais",
+    empresa: "Domino's Pizza",
+    periodo: "Abril/2022 – Fevereiro/2023",
+    empresaLink: "https://www.dominos.com.br",
+    empresaImagem: "dominos.png",
+    responsabilidades: [
+      "Análise de integrações com agregadores de pedidos utilizando consultas SQL e investigação profunda de logs em formato XML.",
+      "Elaboração e execução de mais de 220 cenários de testes manuais e automatizados para validação de funcionalidades e homologação de sistemas.",
+      "Testes de integração de APIs RESTful e simulação de raios de atendimento utilizando a ferramenta Postman.",
+      "Suporte em processos de upgrade de sistemas: backups de ambientes virtuais, aplicação de quickfixes, ajuste de parâmetros no SQL Server e validação pós-deploy.",
+      "Elaboração de cadernos de homologação, manuais técnicos de VMs e padronização/tradução de documentação (PT ↔ EN)."
+    ],
+    showDetails: false
+  }
+]
     };
   },
   methods: {
     toggleDetails(id) {
       const experiencia = this.experiencias.find(exp => exp.id === id);
-      experiencia.showDetails = !experiencia.showDetails;
+      if (experiencia) {
+        experiencia.showDetails = !experiencia.showDetails;
+      }
     }
   },
 };
@@ -103,101 +171,127 @@ export default {
 
 <style scoped>
 .minhas-experiencias {
-  margin-top: 50px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: transparent; 
+  max-width: 800px; 
+  margin: 0 auto;
+  padding: 10px 20px;
   color: #C0C0C0;
 }
 
 .minhas-experiencias h2 {
-  font-size: 2.5em;
-  margin-bottom: 30px;
+  font-size: 1.8em; 
+  margin-bottom: 24px;
   text-align: center;
   color: #ffffff; 
 }
 
-.minhas-experiencias ul {
+.lista-experiencias {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .experiencia-item {
   background-color: transparent; 
-  padding: 20px;
-  margin-bottom: 15px;
+  padding: 12px 18px; 
+  margin-bottom: 12px;
   border-radius: 8px;
-  border: 1px solid #7B2CBF; 
-  box-shadow: 0 2px 6px rgba(123, 44, 191, 0.3); 
-  transition: transform 0.3s ease;
+  border: 1px solid rgba(244, 243, 245, 0.2); 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .experiencia-item:hover {
-  transform: scale(1.03);
+  transform: translateY(-2px); 
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
-.empresa-info {
+.empresa-container {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .empresa-link {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .empresa-imagem {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+  width: 55px;  
+  height: 55px; 
+  object-fit: contain; 
+  flex-shrink: 0; 
 }
 
-.experiencia-info {
+.conteudo-info {
   flex: 1;
-  padding-left: 20px;
 }
 
 .cargo-titulo {
-  font-size: 1.5em;
-  color: #C0C0C0;
+  font-size: 1.1em; 
+  font-weight: 600;
+  color: #f0eeee;
   cursor: pointer;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.cargo-titulo:hover {
+  color: #ffffff;
 }
 
 .detalhes-experiencia {
-  padding-top: 15px;
+  padding-top: 12px;
 }
 
 .empresa-detalhes {
-  background-color: rgba(123, 44, 191, 0.3); 
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05); 
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.empresa-detalhes p {
-  font-size: 1em;
-  margin: 5px 0;
-  font-style: normal; 
+.nome-empresa {
+  font-weight: bold;
+  font-size: 0.9em;
+  margin: 0;
 }
 
-ul {
-  margin-top: 10px;
+.periodo-texto {
+  font-size: 0.85em;
+  color: #ffffff;
+  font-style: normal !important; 
+  margin: 0;
 }
 
-ul li {
-  padding: 5px 0;
-  font-size: 1em;
-  color: #C0C0C0;
+.lista-responsabilidades {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.lista-responsabilidades li {
+  padding: 3px 0;
+  font-size: 0.88em;
+  color: #B0B0B0;
+  line-height: 1.4;
 }
 
 @media (max-width: 768px) {
-  .empresa-info {
+  .empresa-container {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .empresa-detalhes {
     flex-direction: column;
     align-items: flex-start;
+    gap: 4px;
   }
 }
 </style>
-

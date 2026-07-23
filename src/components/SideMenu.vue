@@ -1,102 +1,71 @@
 <template>
-  <div>
-    <button class="menu-hamburger" @click="toggleMenu" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+  <header class="navbar-wrapper">
+    <nav class="floating-nav">
+      <router-link to="/" class="nav-link">
+        HOME
+      </router-link>
 
-    <nav v-if="menuAberto" class="side-menu" @click.self="toggleMenu">
-      <ul>
-        <li><a href="#inicio" @click="toggleMenu">Início</a></li>
-        <li><a href="#experiencias" @click="toggleMenu">Experiências</a></li>
-        <li><a href="#skills" @click="toggleMenu">Skills</a></li>
-        <li><a href="#certificados" @click="toggleMenu">Certificados</a></li>
+      <router-link to="/experiencias" class="nav-link">
+        EXPERIÊNCIAS
+      </router-link>
 
-
-      </ul>
+      <router-link to="/skills" class="nav-link">
+        SKILLS
+      </router-link>
     </nav>
-  </div>
+  </header>
 </template>
 
 <script>
 export default {
-  name: 'SideMenu',
-  data() {
-    return {
-      menuAberto: false,
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.menuAberto = !this.menuAberto;
-    },
-  },
-};
+  name: 'SideMenu'
+}
 </script>
 
 <style scoped>
-.menu-hamburger {
+.navbar-wrapper {
   position: fixed;
-  top: 15px;
-  right: 15px;
-  width: 28px;
-  height: 20px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.floating-nav {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1100;
-  background: transparent;
-  border: none;
-  padding: 0;
+  align-items: center;
+  gap: 20px;
+  background-color: #111111;
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: 1px solid #2e2e2e;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.menu-hamburger span {
-  display: block;
-  height: 3px;
-  background-color: #C0C0C0;
-  border-radius: 2px;
-  transition: background-color 0.3s ease;
-}
-
-.menu-hamburger:hover span {
-  background-color: #9333b4;
-}
-
-.side-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 170px;
-  height: 100vh;
-  background-color: rgba(39, 27, 54, 0.95);
-  box-shadow: -2px 0 5px rgba(0,0,0,0.4);
-  padding: 50px 20px 20px 20px;
-  z-index: 1050;
-  display: flex;
-  flex-direction: column;
-}
-
-.side-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.side-menu a {
-  color: #C0C0C0;
-  font-weight: bold;
+.nav-link {
+  color: #a0a0a0;
   text-decoration: none;
-  font-family: 'Figtree', sans-serif;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
+  font-family: 'IBM Plex Mono', monospace, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
 }
 
-.side-menu a:hover {
-  color: #9333b4;
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link.router-link-exact-active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.nav-link.router-link-exact-active::before {
+  content: '•';
+  margin-right: 6px;
+  color: #ffffff;
 }
 </style>
