@@ -33,6 +33,11 @@ export default {
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  
+  object-fit: cover; 
+  
+  object-position: center 15%; 
+  
   z-index: 1;
   transition: transform 0.3s ease;
 }
@@ -65,6 +70,14 @@ export default {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .foto-container img {
+    width: 200px;
+    height: 200px;
+    object-position: center 10%;
   }
 }
 </style>

@@ -17,34 +17,45 @@
 
 <script>
 export default {
-
+  name: 'MeusIcones'
 };
 </script>
 
 <style scoped>
 .meus-icones {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  transition: opacity 0.2s ease;
 }
 
 .icon img {
-  width: 40px;
-  height: 40px;
+  width: 32px; 
+  height: 32px;
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .icon:hover img {
-  transform: scale(1.1);
-}
-
-.icon {
-  transition: opacity 0.2s ease;
+  transform: scale(1.15);
 }
 
 .icon:hover {
   opacity: 0.9;
 }
 
+@media (max-width: 768px) {
+  .meus-icones {
+    justify-content: center;
+  }
+}
 </style>

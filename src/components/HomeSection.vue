@@ -337,6 +337,12 @@ h1 {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .social-icons {
+    justify-content: center; 
+  }
+}
+
 .profile-photo {
   flex: 1;
 }
