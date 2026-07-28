@@ -2,7 +2,7 @@
 
 ![Happy Sailor Moon](https://media.giphy.com/media/HVHXwzqGsacHS/giphy.gif)
 
-confere ele aqui: [https://duda-abreu.vercel.app](https://duda-abreu.vercel.app)
+confere ele aqui: [https://duda-abreu.com.br](https://duda-abreu.com.br)
 
 ## tecnologias usadas 
 - 💻 vue.js, javascript, html e css!
