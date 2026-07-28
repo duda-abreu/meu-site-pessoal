@@ -1,13 +1,13 @@
 <template>
   <div class="home-container">
-    <div class="intro-section">
+    <div id="home" class="intro-section">
       <div class="text-content">
         <h2 class="typewriter-title" @mouseenter="embaralharTexto">
           <span class="typewriter-text">{{ textoDigitado }}</span><span class="blinking-cursor">_</span>
         </h2>
         
         <p class="graduation-text">
-          Desenvolvedora de Software na
+          {{ content.heroPrefix }}
           <a
             href="https://www.seidor.com/pt-br"
             target="_blank"
@@ -19,13 +19,13 @@
         </p>
 
         <SocialIcons class="social-icons"/>
-        
+
         <div class="bio-text">
           <p>
-            Oie! Aqui você pode conhecer um pouco da minha trajetória, explorar as minhas
-            <router-link to="/skills" class="text-link">Skills</router-link> e conferir meu
+            {{ content.bioIntro }}
+            <a href="#skills" class="text-link">Skills</a> {{ content.bioAnd }}
             <a href="#" class="text-link" @click.prevent="abrirCurriculo">
-              currículo<span class="download-icon"></span>
+              {{ content.resumeWord }}<span class="download-icon"></span>
             </a>
           </p>
         </div>
@@ -33,6 +33,13 @@
 
       <ProfilePhoto class="profile-photo"/>
     </div>
+
+    <section id="sobre-mim" class="secao fade-in">
+      <h2>{{ content.sobreMimHeading }}</h2>
+      <p v-for="(paragrafo, idx) in content.sobreMimParagrafos" :key="idx" class="sobre-mim-texto">
+        {{ paragrafo }}
+      </p>
+    </section>
 
     <section id="experiencias" class="secao fade-in">
       <MinhasExperiencias />
@@ -56,52 +63,88 @@
           height="500px"
           class="pdf-viewer"
         >
-          <p>Seu navegador não suporta visualização de PDF. 
+          <p>{{ content.pdfUnsupported }}
             <a href="/CV - Maria Eduarda Abreu.pdf" download class="download-link">
-              Clique para baixar
+              {{ content.clickToDownload }}
             </a>
           </p>
         </object>
         <a href="/CV - Maria Eduarda Abreu.pdf" download class="download-btn">
-          Baixar Currículo ⬇️
+          {{ content.downloadResume }}
         </a>
       </div>
     </div>
-
-    <Modal v-if="currentModal === 'ciência-computacao'" @close="hideModal">
-      <img src="@/assets/grade.jpg" alt="Grade curricular de Ciência da Computação" class="grade-image"/>
-    </Modal>
   </div>
 </template>
 
 <script>
 import SocialIcons from '@/components/MeusIcones.vue'
 import ProfilePhoto from '@/components/FotodePerfil.vue'
-import Modal from '@/components/Modal.vue'
+import MinhasExperiencias from '@/views/MinhasExperiencias.vue'
+import Tecnologias from '@/views/AsTecnologias.vue'
+import Certificados from '@/views/MeusCertificados.vue'
+import { i18nState } from '@/i18n'
+
+const TEXT = {
+  pt: {
+    heroPrefix: 'Desenvolvedora de Software na',
+    bioIntro: 'Oie! Aqui você pode conhecer um pouco da minha trajetória, explorar as minhas',
+    bioAnd: 'e conferir meu',
+    resumeWord: 'currículo',
+    sobreMimHeading: 'Sobre mim',
+    sobreMimParagrafos: [
+      'Trabalho com desenvolvimento de software há mais de 4 anos, principalmente do lado do Backend — mas gosto de me aventurar no Front-end sempre que dá (como nesse site). Já passei por empresas de diferentes setores, como Seidor, IBM, Icatu Seguros e Domino\'s Pizza, e em cada uma delas ficou ainda mais claro pra mim que um bom desenvolvedor precisa transitar por várias frentes.',
+      'Tecnologia entrou na minha vida cedo. Cresci com computador em casa numa época em que isso ainda não era tão comum, e sempre fui viciada em livros. Nos anos 2010, todo mundo tinha um blog, e o meu começou como um espaço pra falar de livros e animes. Só que, sem perceber, passei mais tempo mexendo no HTML do blog do que escrevendo os posts: trocava o cursor do mouse, colocava player de música tocando escondido e ajustava cada detalhezinho do layout.',
+      'Das tardes brincando com HTML passei a virar noites no Stack Overflow, até parar nas aulas do Gustavo Guanabara ensinando pedra-papel-tesoura em Python. Depois disso, cursar Ciência da Computação foi praticamente inevitável e eu escolhi a melhor do Rio: a UERJ.',
+      'Hoje continuo com a mesma curiosidade de quando passava horas personalizando um blog, mas aplicada a problemas bem maiores. Gosto de entender como tudo se conecta: da regra de negócio aos dados, da arquitetura ao código. É isso que mais me motiva no desenvolvimento de software: construir soluções que sejam simples de usar, fáceis de manter e que realmente resolvam o problema de quem está do outro lado da tela. E, claro, se elas ainda tiverem um design bonito, melhor ainda ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧'
+    ],
+    pdfUnsupported: 'Seu navegador não suporta visualização de PDF.',
+    clickToDownload: 'Clique para baixar',
+    downloadResume: 'Baixar Currículo ⬇️'
+  },
+  en: {
+    heroPrefix: 'Software Developer at',
+    bioIntro: 'Hi! Here you can learn a bit about my journey, explore my',
+    bioAnd: 'and check out my',
+    resumeWord: 'résumé',
+    sobreMimHeading: 'About Me',
+    sobreMimParagrafos: [
+      'I\'ve been working in software development for over 4 years, mainly on the Backend side — but I enjoy venturing into Front-end whenever I get the chance (like on this site). I\'ve worked at companies across different industries, such as Seidor, IBM, Icatu Seguros, and Domino\'s Pizza, and each one made it even clearer to me that a good developer needs to move across multiple fronts.',
+      'Technology came into my life early. I grew up with a computer at home at a time when that wasn\'t so common yet, and I was always hooked on books. In the 2010s, everyone had a blog, and mine started as a space to talk about books and anime. Except, without realizing it, I spent more time tinkering with the blog\'s HTML than actually writing posts: swapping out the cursor, sneaking in a hidden background music player, and adjusting every little detail of the layout.',
+      'Afternoons playing around with HTML turned into nights on Stack Overflow, until I landed on Gustavo Guanabara\'s classes teaching rock-paper-scissors in Python. After that, studying Computer Science was pretty much inevitable, and I chose the best school in Rio: UERJ.',
+      'Today I still carry the same curiosity I had spending hours customizing a blog, just applied to much bigger problems. I like understanding how everything connects: from business rules to data, from architecture to code. That\'s what motivates me most in software development: building solutions that are simple to use, easy to maintain, and that truly solve the problem for whoever\'s on the other side of the screen. And, of course, if they still look good, even better ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧'
+    ],
+    pdfUnsupported: 'Your browser does not support PDF viewing.',
+    clickToDownload: 'Click to download',
+    downloadResume: 'Download Résumé ⬇️'
+  }
+}
 
 export default {
   components: {
     SocialIcons,
     ProfilePhoto,
-    Modal
+    MinhasExperiencias,
+    Tecnologias,
+    Certificados
   },
   data() {
     return {
-      currentModal: null,
+      i18nState,
       mostrarCurriculo: false,
       textoCompleto: "Duda Abreu",
       textoDigitado: "",
       indexDigitacao: 0,
-      animandoEmbaralhar: false
+      animandoEmbaralhar: false,
+      observer: null
+    }
+  },
+  computed: {
+    content() {
+      return TEXT[this.i18nState.locale]
     }
   },
   methods: {
-    showModal(modalType) {
-      this.currentModal = modalType
-    },
-    hideModal() {
-      this.currentModal = null
-    },
     abrirCurriculo() {
       this.mostrarCurriculo = true
     },
@@ -140,15 +183,10 @@ export default {
         iteracao += 1 / 3;
       }, 30);
     },
-    handleScroll() {
-      const sections = document.querySelectorAll('.fade-in');
-      const windowHeight = window.innerHeight;
-      const triggerOffset = windowHeight / 1.5; 
-      
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerOffset) {
-          section.classList.add('visible');
+    handleIntersect(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
       });
     }
@@ -156,11 +194,19 @@ export default {
 
   mounted() {
     this.digitarTexto();
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll(); 
+    this.observer = new IntersectionObserver(this.handleIntersect, {
+      root: null,
+      rootMargin: '0px 0px -20% 0px',
+      threshold: 0.25
+    });
+    this.$nextTick(() => {
+      document.querySelectorAll('.fade-in').forEach(section => {
+        this.observer.observe(section);
+      });
+    });
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    if (this.observer) this.observer.disconnect();
   }
 }
 </script>
@@ -179,9 +225,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 80vh;
+  min-height: calc(100vh - 100px);
   gap: 2rem;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .intro-section,
@@ -203,18 +249,47 @@ export default {
   transform: translateY(0);
 }
 
+.secao:nth-of-type(2) { transition-delay: 0.05s; }
+.secao:nth-of-type(3) { transition-delay: 0.1s; }
+.secao:nth-of-type(4) { transition-delay: 0.15s; }
+
+#sobre-mim {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+#sobre-mim h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.sobre-mim-texto {
+  max-width: 800px;
+  margin: 0 auto 16px;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.sobre-mim-texto:last-child {
+  margin-bottom: 0;
+}
+
 #experiencias {
-  padding-bottom: 15px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 #skills {
-  padding-top: 15px;    
-  padding-bottom: 15px; 
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 #certificados {
-  padding-top: 15px;    
-  padding-bottom: 40px; 
+  padding-top: 60px;
+  padding-bottom: 80px;
 }
 
 .secao.visible {
@@ -231,22 +306,22 @@ export default {
 h1 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
-  color: #C0C0C0;
+  color: var(--text-secondary);
 }
 
 .typewriter-title {
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 700;
   display: inline-block;
-  cursor: pointer; 
+  cursor: pointer;
   user-select: none;
 }
 
 .blinking-cursor {
   display: inline-block;
-  color: #ffffff;
+  color: var(--accent-pink);
   font-weight: bold;
   animation: piscar 0.8s infinite;
   margin-left: 2px;
@@ -260,33 +335,33 @@ h1 {
 .graduation-text {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #C0C0C0;
+  color: var(--text-secondary);
 }
 
 .bio-text {
   max-width: 800px;
   margin: 2rem auto 0;
   font-size: 1.2rem;
-  color: #C0C0C0;
+  color: var(--text-secondary);
 }
 
 .text-link,
 .graduation-text a,
 .bio-text a {
-  color: #C0C0C0;
+  color: var(--accent-pink);
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
-  display: inline-block; 
+  display: inline-block;
   transition: all 0.3s ease;
-  transform-origin: center; 
+  transform-origin: center;
 }
 
 .text-link:hover,
 .graduation-text a:hover,
 .bio-text a:hover {
-  color: #ffffff;
-  transform: scale(1.02); 
+  color: var(--accent-blue);
+  transform: scale(1.02);
 }
 
 .text-link::after {
@@ -312,8 +387,8 @@ h1 {
 }
 
 .download-btn:hover {
-  background: #a3a3a3;
-  transform: scale(1.05); 
+  background: var(--accent-blue);
+  transform: scale(1.05);
 }
 
 .social-icons a:hover img {
@@ -352,14 +427,7 @@ h1 {
   height: 28rem;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 1.5rem rgba(240, 240, 240, 0.7);
-}
-
-.course-image {
-  max-width: 90%;
-  max-height: 90vh;
-  border: 2px solid #fff;
-  box-shadow: 0 0 1.25rem rgba(0,0,0,0.5);
+  box-shadow: 0 0 1.5rem var(--shadow-color);
 }
 
 .modal-curriculo {
@@ -377,48 +445,25 @@ h1 {
 }
 
 .modal-content {
-  background: transparent; 
+  background: var(--surface);
   border-radius: 12px;
   width: 80%;
   max-width: 800px;
   position: relative;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  border: 1px solid #e0e0e0;
-  pointer-events: auto; 
+  box-shadow: 0 2px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  pointer-events: auto;
 }
 
 .pdf-viewer {
-  border: 1px solid #6d6b6b;
+  border: 1px solid var(--border-color);
   margin-bottom: 15px;
-}
-
-.modal-grade {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-
-.grade-image {
-  max-width: 100%;
-  max-height: 70vh;
-  border-radius: 4px;
-  object-fit: contain;
-}
-
-.modal-grade-container {
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
 }
 
 .download-btn {
   display: block;
-  background: #585558; 
-  color: white;
+  background: var(--accent-pink);
+  color: #ffffff;
   text-align: center;
   padding: 12px;
   border-radius: 6px;
@@ -426,11 +471,11 @@ h1 {
   font-weight: bold;
   margin-top: 15px;
   transition: all 0.3s ease;
-  border: 2px solid #0d0d0e; 
+  border: 2px solid var(--border-color);
 }
 
 .download-link {
-  color: #0c0c0c; 
+  color: var(--text-primary);
   font-weight: bold;
 }
 
@@ -438,8 +483,8 @@ h1 {
   position: absolute;
   top: -15px;
   right: -15px;
-  background: #ffffff; 
-  color: white;
+  background: var(--accent-pink);
+  color: #ffffff;
   border: none;
   width: 40px;
   height: 40px;
@@ -449,12 +494,12 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px var(--shadow-color);
   transition: all 0.3s ease;
 }
 
 .close-btn:hover {
-  background: #2c2c2c; 
+  background: var(--accent-blue);
   transform: scale(1.1);
 }
 
@@ -486,11 +531,12 @@ h1 {
     padding: 30px 0;
   }
   
+  #sobre-mim,
   #experiencias,
   #skills,
   #certificados {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   
   .graduation-text,
