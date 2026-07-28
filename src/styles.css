@@ -11,15 +11,38 @@ html {
 }
 
 :root {
-  --bg-color: #1a1a1a; 
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --border-color: #2e2e2e;
-  
+  --bg-color: #fdf2f8;
+  --bg-gradient: linear-gradient(160deg, #fef6fb 0%, #eaf6fd 100%);
+  --surface: #ffffff;
+  --surface-soft: rgba(255, 255, 255, 0.6);
+  --text-primary: #4a3350;
+  --text-secondary: #8c7690;
+  --border-color: #f5b8d8;
+  --border-color-blue: #b8e2f5;
+  --accent-pink: #ff8fc2;
+  --accent-blue: #57b8e8;
+  --shadow-color: rgba(255, 143, 194, 0.25);
+  --dot-pattern-color: rgba(255, 143, 194, 0.18);
+
   --font-mono: 'IBM Plex Mono', monospace;
   --font-sans: 'Inter', system-ui, sans-serif;
-  
+
   --font-main: var(--font-mono);
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #1b1420;
+  --bg-gradient: linear-gradient(160deg, #1b1420 0%, #14181f 100%);
+  --surface: #241a29;
+  --surface-soft: rgba(255, 255, 255, 0.05);
+  --text-primary: #f7e9f2;
+  --text-secondary: #b9a0b6;
+  --border-color: #5c3a52;
+  --border-color-blue: #2f5468;
+  --accent-pink: #ff8fc2;
+  --accent-blue: #6cc4ee;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --dot-pattern-color: rgba(255, 255, 255, 0.05);
 }
 
 body {
@@ -27,13 +50,11 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: var(--font-main);
-  background-color: var(--bg-color);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--text-primary);
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 body::before {
@@ -44,13 +65,14 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot-pattern-color) 1px, transparent 1px);
   background-size: 24px 24px;
   pointer-events: none;
 }
 
 section,
 #home,
+#sobre-mim,
 #experiencias,
 #skills,
 #certificados {
@@ -77,8 +99,8 @@ h1, h2, h3, p, span, a, button {
 }
 
 .btn-pill:hover, .nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-color: #444;
+  background-color: var(--surface-soft);
+  border-color: var(--accent-pink);
 }
 
 /* Mobile */

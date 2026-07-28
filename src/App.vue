@@ -1,34 +1,30 @@
 <template>
   <div id="app">
+    <BackgroundDecor />
     <SideMenu />
-    <div class="background-gradient-ball"></div>
     <div class="page-content">
       <router-view />
     </div>
+    <SiteFooter />
   </div>
 </template>
 
 <script>
 import SideMenu from "@/components/SideMenu.vue";
+import SiteFooter from "@/components/SiteFooter.vue";
+import BackgroundDecor from "@/components/BackgroundDecor.vue";
 
 export default {
   name: "App",
   components: {
-    SideMenu
+    SideMenu,
+    SiteFooter,
+    BackgroundDecor
   }
 };
 </script>
 
 <style>
-body {
-  background: radial-gradient(circle at 80% 20%, rgba(155, 154, 155, 0.6), #1c1c1c);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  min-height: 100vh;
-  margin: 0;
-}
-
 #app {
   width: 100%;
   min-height: 100vh;
