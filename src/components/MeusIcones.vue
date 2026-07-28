@@ -35,12 +35,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.2s ease;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .icon img {
-  width: 32px; 
-  height: 32px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -50,7 +56,10 @@ export default {
 }
 
 .icon:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  border-color: var(--accent-pink);
+  background: rgba(255, 143, 194, 0.22);
+  box-shadow: 0 4px 16px var(--shadow-color);
 }
 
 @media (max-width: 768px) {

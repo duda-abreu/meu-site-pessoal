@@ -38,7 +38,7 @@ export default {
         { id: 5, nome: "React", imagem: "react.svg", link: "https://reactjs.org/" },
         { id: 6, nome: "SQL", imagem: "sql.svg", link: "https://en.wikipedia.org/wiki/SQL" },
         { id: 8, nome: "Docker", imagem: "docker.svg", link: "https://www.docker.com/" },
-        { id: 10, nome: "Git/GitHub", imagem: "git.svg", link: "https://git-scm.com/" },
+        { id: 10, nome: "Git", imagem: "git.svg", link: "https://git-scm.com/" },
         { id: 11, nome: "HTML5", imagem: "html.svg", link: "https://developer.mozilla.org/en-US/docs/Web/HTML" },
         { id: 12, nome: "CSS3", imagem: "css.svg", link: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
         { id: 13, nome: "GraphQL", imagem: "graphql.svg", link: "https://graphql.org/" },
@@ -56,7 +56,7 @@ export default {
 <style scoped>
 .tecnologias {
   margin-top: 0;
-  color: #C0C0C0;
+  color: var(--text-secondary);
   padding: 20px;
   border-radius: 8px;
   max-width: 100%;
@@ -67,7 +67,7 @@ export default {
   text-align: center;
   font-size: 2em;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .icones-tecnologias {
@@ -96,18 +96,30 @@ export default {
 .icone-tecnologia {
   width: 50px;
   height: 50px;
-  transition: transform 0.3s ease;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 8px;
+}
+
+.tecnologia-item:hover .icone-tecnologia {
+  border-color: var(--accent-pink);
+  background: rgba(255, 143, 194, 0.22);
+  box-shadow: 0 4px 16px var(--shadow-color);
 }
 
 .tecnologia-nome {
   font-size: 0.85rem;
-  color: #C0C0C0;
+  color: var(--text-secondary);
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  max-width: 80px;
-  word-break: break-word;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .tecnologia-item:hover .icone-tecnologia {

@@ -33,17 +33,18 @@ export default {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  
-  object-fit: cover; 
-  
-  object-position: center 15%; 
-  
+
+  object-fit: cover;
+
+  object-position: center 15%;
+
   z-index: 1;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .foto-container:hover img {
-  transform: scale(1.05); 
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(255, 143, 194, 0.45);
 }
 
 .borda-destaque {
@@ -52,16 +53,16 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 3px solid #e4e4e4;
+  border: 3px solid var(--border-color-blue);
   border-radius: 50%;
   z-index: 0;
   box-sizing: border-box;
   animation: girar 3s linear infinite;
-  transition: border-color 0.3s ease; 
+  transition: border-color 0.3s ease;
 }
 
 .foto-container:hover .borda-destaque {
-  border-color: #5a565e; 
+  border-color: var(--accent-pink);
 }
 
 @keyframes girar {
