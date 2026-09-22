@@ -18,6 +18,8 @@
           </a>
         </p>
 
+        <p class="degree-text">{{ content.degree }}</p>
+
         <SocialIcons class="social-icons"/>
 
         <div class="bio-text">
@@ -88,6 +90,7 @@ import { i18nState } from '@/i18n'
 const TEXT = {
   pt: {
     heroPrefix: 'Desenvolvedora de Software na',
+    degree: 'Bacharel em Ciência da Computação pela Universidade do Estado do Rio de Janeiro (UERJ)',
     bioIntro: 'Oie! Aqui você pode conhecer um pouco da minha trajetória, explorar as minhas',
     bioAnd: 'e conferir meu',
     resumeWord: 'currículo',
@@ -104,6 +107,7 @@ const TEXT = {
   },
   en: {
     heroPrefix: 'Software Developer at',
+    degree: 'Bachelor\'s in Computer Science from Universidade do Estado do Rio de Janeiro (UERJ)',
     bioIntro: 'Hi! Here you can learn a bit about my journey, explore my',
     bioAnd: 'and check out my',
     resumeWord: 'résumé',
@@ -332,8 +336,15 @@ h1 {
 
 .graduation-text {
   font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-secondary);
+}
+
+.degree-text {
+  font-size: 0.95rem;
   margin-bottom: 2rem;
   color: var(--text-secondary);
+  opacity: 0.85;
 }
 
 .bio-text {
