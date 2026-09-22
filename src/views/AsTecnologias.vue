@@ -48,14 +48,20 @@ const TECNOLOGIAS = {
   swagger: { nome: 'Swagger', imagem: 'swagger.svg', link: 'https://swagger.io/' },
   docker: { nome: 'Docker', imagem: 'docker.svg', link: 'https://www.docker.com/' },
   git: { nome: 'Git', imagem: 'git.svg', link: 'https://git-scm.com/' },
-  excel: { nome: 'Excel', imagem: 'excel.svg', link: 'https://www.microsoft.com/pt-br/microsoft-365/excel' }
+  fastapi: { nome: 'FastAPI', imagem: 'fastapi.svg', link: 'https://fastapi.tiangolo.com/' },
+  postgresql: { nome: 'PostgreSQL', imagem: 'postgresql.svg', link: 'https://www.postgresql.org/' },
+  mysql: { nome: 'MySQL', imagem: 'mysql.svg', link: 'https://www.mysql.com/' },
+  mongodb: { nome: 'MongoDB', imagem: 'mongodb.svg', link: 'https://www.mongodb.com/' },
+  githubactions: { nome: 'GitHub Actions', imagem: 'githubactions.svg', link: 'https://github.com/features/actions' },
+  cicd: { nome: 'CI/CD', imagem: 'cicd.svg', link: 'https://en.wikipedia.org/wiki/CI/CD' }
 }
 
 const GRUPOS = [
   { id: 'linguagens', itens: ['python', 'javascript', 'sql'] },
   { id: 'frontend', itens: ['html', 'css', 'vue', 'react'] },
-  { id: 'backend', itens: ['node', 'graphql', 'postman', 'swagger'] },
-  { id: 'ferramentas', itens: ['docker', 'git', 'excel'] }
+  { id: 'backend', itens: ['node', 'graphql', 'postman', 'swagger', 'fastapi'] },
+  { id: 'bancodedados', itens: ['postgresql', 'mysql', 'mongodb'] },
+  { id: 'ferramentas', itens: ['docker', 'git', 'githubactions', 'cicd'] }
 ]
 
 const TEXT = {
@@ -65,6 +71,7 @@ const TEXT = {
       linguagens: 'Linguagens',
       frontend: 'Frontend',
       backend: 'Backend & APIs',
+      bancodedados: 'Bancos de Dados',
       ferramentas: 'DevOps & Ferramentas'
     }
   },
@@ -74,6 +81,7 @@ const TEXT = {
       linguagens: 'Languages',
       frontend: 'Frontend',
       backend: 'Backend & APIs',
+      bancodedados: 'Databases',
       ferramentas: 'DevOps & Tools'
     }
   }
