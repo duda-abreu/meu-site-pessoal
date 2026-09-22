@@ -23,8 +23,8 @@ import LanguageToggle from '@/components/LanguageToggle.vue'
 import { i18nState } from '@/i18n'
 
 const NAV_LABELS = {
-  pt: { home: 'HOME', 'sobre-mim': 'SOBRE MIM', experiencias: 'EXPERIÊNCIAS', skills: 'SKILLS' },
-  en: { home: 'HOME', 'sobre-mim': 'ABOUT ME', experiencias: 'EXPERIENCE', skills: 'SKILLS' }
+  pt: { home: 'HOME', 'sobre-mim': 'SOBRE MIM', experiencias: 'EXPERIÊNCIAS', projetos: 'PROJETOS', skills: 'SKILLS' },
+  en: { home: 'HOME', 'sobre-mim': 'ABOUT ME', experiencias: 'EXPERIENCE', projetos: 'PROJECTS', skills: 'SKILLS' }
 }
 
 export default {
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       i18nState,
-      sectionIds: ['home', 'sobre-mim', 'experiencias', 'skills'],
+      sectionIds: ['home', 'sobre-mim', 'experiencias', 'projetos', 'skills'],
       activeSection: 'home',
       observer: null
     }

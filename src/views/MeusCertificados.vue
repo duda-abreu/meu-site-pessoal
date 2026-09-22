@@ -45,7 +45,7 @@
 import { i18nState } from '@/i18n'
 
 const CERTIFICADOS_BASE = [
-  { id: 1, imagem: 'CambridgeResult.jpg' },
+  { id: 1, imagem: 'CambridgeResult.webp' },
   { id: 2, imagem: 'CertificadoExcel.jpg' },
   { id: 3, imagem: 'CertGitGithub.jpg' },
   { id: 4, imagem: 'CertHtmlCSS.jpg' }

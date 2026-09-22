@@ -57,6 +57,10 @@
       <MinhasExperiencias />
     </section>
 
+    <section id="projetos" class="secao fade-in">
+      <MeusProjetos />
+    </section>
+
     <section id="skills" class="secao fade-in">
       <Tecnologias />
     </section>
@@ -93,6 +97,7 @@
 import SocialIcons from '@/components/MeusIcones.vue'
 import ProfilePhoto from '@/components/FotodePerfil.vue'
 import MinhasExperiencias from '@/views/MinhasExperiencias.vue'
+import MeusProjetos from '@/views/MeusProjetos.vue'
 import Tecnologias from '@/views/AsTecnologias.vue'
 import Certificados from '@/views/MeusCertificados.vue'
 import { i18nState } from '@/i18n'
@@ -139,6 +144,7 @@ export default {
     SocialIcons,
     ProfilePhoto,
     MinhasExperiencias,
+    MeusProjetos,
     Tecnologias,
     Certificados
   },
@@ -264,6 +270,7 @@ export default {
 .secao:nth-of-type(2) { transition-delay: 0.05s; }
 .secao:nth-of-type(3) { transition-delay: 0.1s; }
 .secao:nth-of-type(4) { transition-delay: 0.15s; }
+.secao:nth-of-type(5) { transition-delay: 0.2s; }
 
 #sobre-mim {
   padding-top: 60px;
@@ -290,6 +297,11 @@ export default {
 }
 
 #experiencias {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+#projetos {
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -551,6 +563,7 @@ h1 {
   
   #sobre-mim,
   #experiencias,
+  #projetos,
   #skills,
   #certificados {
     padding-top: 40px;

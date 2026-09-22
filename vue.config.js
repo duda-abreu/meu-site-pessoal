@@ -3,6 +3,6 @@ module.exports = {
   
   parallel: false,
   
-  chainWebpack: config => {
+  chainWebpack: () => {
   }
 }
