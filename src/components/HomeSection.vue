@@ -18,7 +18,17 @@
           </a>
         </p>
 
-        <p class="degree-text">{{ content.degree }}</p>
+        <p class="degree-text">
+          {{ content.degreePrefix }}
+          <a
+            href="https://www.uerj.br/"
+            target="_blank"
+            rel="noopener"
+            class="text-link"
+          >
+            Universidade do Estado do Rio de Janeiro (UERJ)
+          </a>
+        </p>
 
         <SocialIcons class="social-icons"/>
 
@@ -90,7 +100,7 @@ import { i18nState } from '@/i18n'
 const TEXT = {
   pt: {
     heroPrefix: 'Desenvolvedora de Software na',
-    degree: 'Bacharel em Ciência da Computação pela Universidade do Estado do Rio de Janeiro (UERJ)',
+    degreePrefix: 'Bacharel em Ciência da Computação pela',
     bioIntro: 'Oie! Aqui você pode conhecer um pouco da minha trajetória, explorar as minhas',
     bioAnd: 'e conferir meu',
     resumeWord: 'currículo',
@@ -107,7 +117,7 @@ const TEXT = {
   },
   en: {
     heroPrefix: 'Software Developer at',
-    degree: 'Bachelor\'s in Computer Science from Universidade do Estado do Rio de Janeiro (UERJ)',
+    degreePrefix: 'Bachelor\'s in Computer Science from',
     bioIntro: 'Hi! Here you can learn a bit about my journey, explore my',
     bioAnd: 'and check out my',
     resumeWord: 'résumé',
@@ -341,10 +351,9 @@ h1 {
 }
 
 .degree-text {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
   color: var(--text-secondary);
-  opacity: 0.85;
 }
 
 .bio-text {
