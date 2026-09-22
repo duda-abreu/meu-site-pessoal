@@ -21,7 +21,10 @@
           <img
             :src="require(`@/assets/projects/${projeto.imagem}`)"
             :alt="projeto.alt"
-            class="projeto-imagem"
+            :class="[
+              'projeto-imagem',
+              { 'projeto-imagem--documento': projeto.slug === 'mlops-devsecops-tcc' }
+            ]"
             loading="lazy"
           >
         </a>
@@ -106,7 +109,7 @@ const TEXT = {
         destaques: [
           'Letras sincronizadas com tradução e vocabulário',
           'Ditados e exercícios usando trechos reais de músicas',
-          'Parcours Défi com gramática, conversação e progresso'
+          'Parcours Défi: trilha de aprendizagem com desafios graduais de gramática, conversação e acompanhamento de progresso'
         ],
         tecnologias: ['Python', 'HTML', 'CSS', 'JavaScript']
       },
@@ -173,7 +176,7 @@ const TEXT = {
         destaques: [
           'Synchronized lyrics with translations and vocabulary',
           'Dictation and exercises using real song excerpts',
-          'Parcours Défi with grammar, conversation and progress tracking'
+          'Parcours Défi: a learning path with progressive grammar and conversation challenges, plus progress tracking'
         ],
         tecnologias: ['Python', 'HTML', 'CSS', 'JavaScript']
       },
@@ -278,7 +281,9 @@ export default {
 
 .projeto-imagem-link {
   display: block;
-  min-height: 300px;
+  width: 100%;
+  aspect-ratio: 36 / 25;
+  align-self: start;
   overflow: hidden;
   background: var(--surface);
 }
@@ -287,7 +292,6 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 300px;
   object-fit: cover;
   object-position: top center;
   transition: transform 0.45s ease;
@@ -297,9 +301,8 @@ export default {
   transform: scale(1.025);
 }
 
-.projeto-card:last-child .projeto-imagem {
+.projeto-imagem--documento {
   object-fit: contain;
-  padding: 24px;
 }
 
 .projeto-conteudo {
@@ -420,10 +423,6 @@ export default {
     order: 0;
   }
 
-  .projeto-imagem-link,
-  .projeto-imagem {
-    min-height: 240px;
-  }
 }
 
 @media (max-width: 560px) {
@@ -439,18 +438,10 @@ export default {
     gap: 24px;
   }
 
-  .projeto-imagem-link,
-  .projeto-imagem {
-    min-height: 180px;
-  }
-
   .projeto-conteudo {
     padding: 20px 18px;
   }
 
-  .projeto-card:last-child .projeto-imagem {
-    padding: 14px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
