@@ -214,8 +214,8 @@ export default {
     this.digitarTexto();
     this.observer = new IntersectionObserver(this.handleIntersect, {
       root: null,
-      rootMargin: '0px 0px -20% 0px',
-      threshold: 0.25
+      rootMargin: '0px 0px -15% 0px',
+      threshold: 0
     });
     this.$nextTick(() => {
       document.querySelectorAll('.fade-in').forEach(section => {
